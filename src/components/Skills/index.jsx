@@ -1,7 +1,7 @@
 import React from "react";
 import { tokens } from "../../utils/ThemesV2";
 import { Box, Container, styled, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid2";
+import Grid from "@mui/material/Grid";
 import GlowCard from "../MircoElements/GlowCard";
 import { skills, metadataSkills } from "../../data/constants";
 

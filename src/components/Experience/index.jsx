@@ -2,7 +2,7 @@ import React from "react";
 import { tokens } from "../../utils/ThemesV2";
 import { Box, Container, styled, Typography } from "@mui/material";
 import { metadataExp, experiences } from "../../data/constants";
-import Grid from "@mui/material/Grid2";
+import Grid from "@mui/material/Grid";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";

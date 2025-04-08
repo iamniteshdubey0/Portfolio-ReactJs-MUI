@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Box, styled, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid2";
+import Grid from "@mui/material/Grid";
 import { useTheme } from "@mui/material";
 import { tokens } from "../../utils/ThemesV2";
 import Btn from "../MircoElements/Btn";
