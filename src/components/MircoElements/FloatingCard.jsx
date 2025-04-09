@@ -72,7 +72,7 @@ const FloatingCard = ({
   left,
   right,
   bottom,
-  textPosition,
+  textposition,
 }) => {
   return (
     <ButtonIconLink
@@ -83,7 +83,7 @@ const FloatingCard = ({
       bottom={bottom}
     >
       <IconBox>{icon ? icon : "😪"}</IconBox>
-      <SpamBox textPosition={textPosition}>
+      <SpamBox textposition={textposition}>
         <SpamBoxText>{tag ? tag : "sleeping"}</SpamBoxText>
       </SpamBox>
     </ButtonIconLink>

@@ -8,7 +8,6 @@ const Btn = ({ title, gradient, onclick, icon, size }) => {
   const colors = tokens(theme.palette.mode);
 
   const CustomButton = styled(Button)(({ theme }) => ({
-    
   }));
   return (
     <CustomButton size={size} onClick={onclick} variant="outlined" endIcon={icon}>

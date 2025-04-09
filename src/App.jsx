@@ -6,6 +6,9 @@ import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Project from "./components/Project";
+import Education from "./components/Education";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 const App = () => {
   const theme = useTheme();
@@ -26,7 +29,7 @@ const App = () => {
   const Wrapper = styled(Box)(() => ({
     background: `linear-gradient(38.73deg, rgba(204, 0, 187, 0.15) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.15) 100%)`,
     width: "100%",
-    clipPath: `polygon(0 0, 100% 0, 100% 100%,30% 98%, 0 100%)`,
+    clipPath: `polygon(0 0, 100% 0, 100% 100%,27% 99%, 0 100%)`
   }));
 
   return (
@@ -38,7 +41,10 @@ const App = () => {
           <Skills></Skills>
           <Experience></Experience>
           <Project></Project>
+          <Education></Education>
+          <Contact></Contact>
         </Wrapper>
+        <Footer></Footer>
       </Body>
     </>
   );

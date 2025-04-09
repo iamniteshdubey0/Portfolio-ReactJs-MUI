@@ -67,7 +67,7 @@ const ProjectCard = styled(Grid)(({ theme }) => ({
   cursor: "pointer",
   width: "90%",
   maxWidth: "250px",
-  minHeight: "320px",
+  minHeight: "400px",
   display: "flex",
   justifyContent: "flex-start",
   alignItems: "flex-start",
@@ -90,11 +90,12 @@ const ProjectCard = styled(Grid)(({ theme }) => ({
 const CardImage = styled("img")(({ theme }) => ({
   width: "100%",
   height: "160px",
-  objectFit: "contain",
-  borderRadius: "10px",
+  objectFit: "cover",
+  borderRadius: "8px",
 }));
 
 const TechStack = styled(Grid)(({ theme }) => ({
+  marginTop: "5px",
   width: "100%",
   display: "flex",
   justifyContent: "flex-start",
@@ -133,7 +134,7 @@ const Span = styled(Typography)(({ theme }) => ({
   fontSize: "10px",
   fontWeight: 500,
   textTransform: "capitalize",
-  marginBottom: "1px",
+  margin: "4px 0px",
   color:
     theme.palette.mode === "light"
       ? tokens(theme.palette.mode).whiteSmoke[700]
@@ -158,7 +159,7 @@ const Project = () => {
     setAlignment(newAlignment);
   };
   return (
-    <Container maxWidth="md" sx={{ mt: 8, p: 2, mb: 3 }}>
+    <Container maxWidth="lg" sx={{ mt: 8, p: 2, mb: 3 }}>
       <SectionHeader>
         <SectionHeading>Projects</SectionHeading>
         <SectionDescription>My projects</SectionDescription>
@@ -190,42 +191,20 @@ const Project = () => {
             three
           </ToggleTab>
         </ToggleButtonGroup>
-        <ProjectWrapper conatiner>
+        <ProjectWrapper container>
           {projects && projects.length > 0
             ? projects.map((item, index) => (
                 <ProjectCard size={4} key={index}>
                   <CardImage src={item.image}></CardImage>
                   <TechStack>
-                    <TechChip
-                      size="small"
-                      label="React"
-                      variant="outlined"
-                    ></TechChip>
-                    <TechChip
-                      size="small"
-                      label="React"
-                      variant="outlined"
-                    ></TechChip>
-                    <TechChip
-                      size="small"
-                      label="React"
-                      variant="outlined"
-                    ></TechChip>
-                    <TechChip
-                      size="small"
-                      label="React"
-                      variant="outlined"
-                    ></TechChip>
-                    <TechChip
-                      size="small"
-                      label="React"
-                      variant="outlined"
-                    ></TechChip>
-                    <TechChip
-                      size="small"
-                      label="React"
-                      variant="outlined"
-                    ></TechChip>
+                    {item.tags.map((tag, index) => (
+                      <TechChip
+                        key={index}
+                        size="small"
+                        label={tag}
+                        variant="outlined"
+                      ></TechChip>
+                    ))}
                   </TechStack>
                   <CardDetails>
                     <CardHeading>{item.title}</CardHeading>

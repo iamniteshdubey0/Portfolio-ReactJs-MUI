@@ -181,22 +181,22 @@ const Hero = () => {
             />
           </MiniBox>
           <FloatingCard
-            textPosition={"right"}
+            textposition={"right"}
             top="20%"
             right="24%"
           ></FloatingCard>
           <FloatingCard
-            textPosition={"left"}
+            textposition={"left"}
             top="16%"
             right="42%"
           ></FloatingCard>
           <FloatingCard
-            textPosition={"left"}
+            textposition={"left"}
             bottom="18%"
             right="45%"
           ></FloatingCard>
           <FloatingCard
-            textPosition={"right"}
+            textposition={"right"}
             bottom="25%"
             right="21%"
           ></FloatingCard>
