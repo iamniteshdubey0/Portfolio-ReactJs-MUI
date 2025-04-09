@@ -1,10 +1,11 @@
+import { useTheme } from "@mui/material";
+import { tokens } from "./utils/ThemesV2";
 import { Box, styled } from "@mui/material";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
-import { useTheme } from "@mui/material";
-import { tokens } from "./utils/ThemesV2";
+import Project from "./components/Project";
 
 const App = () => {
   const theme = useTheme();
@@ -36,6 +37,7 @@ const App = () => {
         <Wrapper>
           <Skills></Skills>
           <Experience></Experience>
+          <Project></Project>
         </Wrapper>
       </Body>
     </>
