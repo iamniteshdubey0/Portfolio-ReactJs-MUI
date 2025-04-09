@@ -2,7 +2,8 @@ import React from "react";
 import { tokens } from "../../utils/ThemesV2";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import { Box, Grid, Container, styled, Typography } from "@mui/material";
+import { Box, Grid, Container, styled, Typography, Chip } from "@mui/material";
+import { projects } from "../../data/constants";
 
 const SectionHeader = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -57,25 +58,97 @@ const ProjectWrapper = styled(Grid)(({ theme }) => ({
   display: "flex",
   justifyContent: "flex-start",
   alignItems: "flex-start",
-  gap: "10px",
+  flexWrap: "wrap",
+  gap: "20px",
   marginTop: "32px",
 }));
 
 const ProjectCard = styled(Grid)(({ theme }) => ({
-    cursor:'pointer',
-  width: "100%",
-  minHeight:'180px',
+  cursor: "pointer",
+  width: "90%",
+  maxWidth: "250px",
+  minHeight: "320px",
   display: "flex",
-  justifyContent: "center",
+  justifyContent: "flex-start",
   alignItems: "flex-start",
+  flexDirection: "column",
+  padding: "10px",
   gap: "15px",
   border: `0.1px solid ${tokens(theme.palette.mode).secondary[500]}`,
-  borderRadius:'5px',
+  boxShadow: `rgb(251 217 87) 0px 0px 40px -20px`,
+  borderRadius: "5px",
   transition: "all 0.3s linear",
+  backgroundColor:
+    theme.palette.mode === "light"
+      ? tokens(theme.palette.mode).whiteSmoke[500]
+      : tokens(theme.palette.mode).oxfordBlue[200],
   "&:hover": {
-    boxShadow: `rgb(251 217 87) 0px 0px 40px -20px`,
     transform: "translateY(-5px)",
   },
+}));
+
+const CardImage = styled("img")(({ theme }) => ({
+  width: "100%",
+  height: "160px",
+  objectFit: "contain",
+  borderRadius: "10px",
+}));
+
+const TechStack = styled(Grid)(({ theme }) => ({
+  width: "100%",
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "flex-start",
+  flexWrap: "wrap",
+  gap: "5px",
+}));
+
+const CardDetails = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexWrap: "wrap",
+  flexDirection: "column",
+  justifyContent: "flex-start",
+  alignItems: "flex-start",
+  gap: "0px",
+}));
+
+const TechChip = styled(Chip)(({ theme }) => ({
+  borderRadius: "4px",
+  border: `0.1px solid ${tokens(theme.palette.mode).secondary[500]}`,
+  padding: "2px 4px",
+}));
+
+const CardHeading = styled(Typography)(({ theme }) => ({
+  fontSize: "14px",
+  marginBottom: "1px",
+  fontWeight: 600,
+  textTransform: "capitalize",
+  color:
+    theme.palette.mode === "light"
+      ? tokens(theme.palette.mode).whiteSmoke[800]
+      : tokens(theme.palette.mode).whiteSmoke[400],
+}));
+
+const Span = styled(Typography)(({ theme }) => ({
+  fontSize: "10px",
+  fontWeight: 500,
+  textTransform: "capitalize",
+  marginBottom: "1px",
+  color:
+    theme.palette.mode === "light"
+      ? tokens(theme.palette.mode).whiteSmoke[700]
+      : tokens(theme.palette.mode).whiteSmoke[200],
+}));
+
+const CardDescription = styled(Typography)(({ theme }) => ({
+  textTransform: "capitalize",
+  fontSize: "12px",
+  fontWeight: 400,
+  margin: "1px",
+  color:
+    theme.palette.mode === "light"
+      ? tokens(theme.palette.mode).whiteSmoke[800]
+      : tokens(theme.palette.mode).whiteSmoke[400],
 }));
 
 const Project = () => {
@@ -118,9 +191,52 @@ const Project = () => {
           </ToggleTab>
         </ToggleButtonGroup>
         <ProjectWrapper conatiner>
-          <ProjectCard size={4}>Hello</ProjectCard>
-          <ProjectCard size={4}>Hello</ProjectCard>
-          <ProjectCard size={4}>Hello</ProjectCard>
+          {projects && projects.length > 0
+            ? projects.map((item, index) => (
+                <ProjectCard size={4} key={index}>
+                  <CardImage src={item.image}></CardImage>
+                  <TechStack>
+                    <TechChip
+                      size="small"
+                      label="React"
+                      variant="outlined"
+                    ></TechChip>
+                    <TechChip
+                      size="small"
+                      label="React"
+                      variant="outlined"
+                    ></TechChip>
+                    <TechChip
+                      size="small"
+                      label="React"
+                      variant="outlined"
+                    ></TechChip>
+                    <TechChip
+                      size="small"
+                      label="React"
+                      variant="outlined"
+                    ></TechChip>
+                    <TechChip
+                      size="small"
+                      label="React"
+                      variant="outlined"
+                    ></TechChip>
+                    <TechChip
+                      size="small"
+                      label="React"
+                      variant="outlined"
+                    ></TechChip>
+                  </TechStack>
+                  <CardDetails>
+                    <CardHeading>{item.title}</CardHeading>
+                    <CardDescription>
+                      {item.description.slice(0, 100) + "..."}
+                    </CardDescription>
+                    <Span>{item.date}</Span>
+                  </CardDetails>
+                </ProjectCard>
+              ))
+            : "no projects"}
         </ProjectWrapper>
       </Box>
     </Container>
