@@ -1,5 +1,5 @@
 import React from "react";
-import { tokens } from "../../utils/ThemesV2";
+import { tokens } from "../../../utils/ThemesV2";
 import { Box, Container, styled, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 

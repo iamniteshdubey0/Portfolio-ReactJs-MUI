@@ -1,7 +1,7 @@
 import React from "react";
-import { tokens } from "../../utils/ThemesV2";
+import { tokens } from "../../../utils/ThemesV2";
 import { Box, Container, styled, Typography } from "@mui/material";
-import { metadataExp, education } from "../../data/constants";
+import { metadataExp, experiences } from "../../../data/constants";
 import Grid from "@mui/material/Grid";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
@@ -19,7 +19,7 @@ const Document = styled("img")(({ theme }) => ({
   transition: "all 0.3s linear",
 }));
 
-const SectionHeader = styled(Box)(({ theme }) => ({
+const SkillsHeader = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -68,7 +68,6 @@ const Span = styled(Typography)(({ theme }) => ({
 
 const TimelineBoxDescription = styled(Typography)(({ theme }) => ({
   textTransform: "capitalize",
-  textAlign:'left',
   fontSize: "14px",
   fontWeight: 400,
   margin: "4px",
@@ -79,10 +78,10 @@ const TimelineBoxDescription = styled(Typography)(({ theme }) => ({
 }));
 
 const SkillText = styled(Typography)(({ theme }) => ({
-  margin:'auto 0px',
   textTransform: "capitalize",
   fontSize: "12px",
   fontWeight: 400,
+  margin: "4px",
   color:
     theme.palette.mode === "light"
       ? tokens(theme.palette.mode).whiteSmoke[800]
@@ -145,7 +144,7 @@ const TimelineBoxBody = styled(Box)(({ theme }) => ({
 }));
 
 const HeaderIcon = styled(Box)(({ theme }) => ({
-  width: "16%",
+  width: "8%",
   display: "flex",
   alignItems: "flex-start",
   justifyContent: "center",
@@ -158,7 +157,7 @@ const Image = styled("img")(({ theme }) => ({
 }));
 
 const HeaderDetails = styled(Box)(({ theme }) => ({
-  width: "84%",
+  width: "92%",
   display: "flex",
   alignItems: "flex-start",
   justifyContent: "flex-start",
@@ -169,7 +168,7 @@ const SkillsStack = styled(Grid)(({ theme }) => ({
   width: "100%",
   display: "flex",
   justifyContent: "flex-start",
-  alignItems: "center",
+  alignItems: "flex-start",
   gap: "3px",
 }));
 
@@ -178,23 +177,34 @@ const SkillsStackInner = styled(Grid)(({ theme }) => ({
   justifyContent: "flex-start",
   alignItems: "center",
   flexWrap: "wrap",
-  gap: "10px",
+  gap: "5px",
 }));
 
-const Education = () => {
+const Experience = () => {
   return (
     <Container maxWidth="md" sx={{ mt: 8, p: 2 }}>
-      <SectionHeader>
+      <SkillsHeader>
         <SectionHeading>{metadataExp.section}</SectionHeading>
         <SectionDescription>{metadataExp.desc} </SectionDescription>
-      </SectionHeader>
+      </SkillsHeader>
       <Grid container>
-        <Timeline position="alternate">
-          {education && education.length > 0
-            ? education.map((item, index) => (
+        <Timeline
+          sx={{
+            [`& .${timelineItemClasses.root}:before`]: {
+              flex: 0,
+              padding: 0,
+            },
+          }}
+        >
+          {experiences && experiences.length > 0
+            ? experiences.map((item, index) => (
                 <TimelineItem key={index}>
                   <TimelineSeparator>
-                    <TimelineDot variant="outlined" />
+                    <TimelineDot
+                      sx={(theme) => ({
+                        bgcolor: tokens(theme.palette.mode).primary[500],
+                      })}
+                    />
                     <TimelineConnector
                       sx={(theme) => ({
                         bgcolor: tokens(theme.palette.mode).primary[500],
@@ -208,8 +218,10 @@ const Education = () => {
                           <Image src={item.img}></Image>
                         </HeaderIcon>
                         <HeaderDetails>
-                          <TimelineBoxHeading>{item.school}</TimelineBoxHeading>
-                          <TimelineBoxPara>{item.degree}</TimelineBoxPara>
+                          <TimelineBoxHeading>
+                            {item.company}
+                          </TimelineBoxHeading>
+                          <TimelineBoxPara>{item.role}</TimelineBoxPara>
                           <Span>{item.date}</Span>
                         </HeaderDetails>
                       </TimelineBoxHeader>
@@ -218,14 +230,24 @@ const Education = () => {
                           {item.desc}
                         </TimelineBoxDescription>
                         <SkillsStack container>
-                          <SkillsStackInner size={2}>
+                          <SkillsStackInner size={1}>
                             <TimelineBoxDescription sx={{ fontWeight: 600 }}>
-                              Grade:
+                              skills:
                             </TimelineBoxDescription>
                           </SkillsStackInner>
-                          <SkillsStackInner size={9}>
-                            <SkillText>{item.grade}</SkillText>
+                          <SkillsStackInner size={10}>
+                            {item.skills.map((skill, index) => (
+                              <SkillText key={index}>
+                                {"•"} {skill}
+                              </SkillText>
+                            ))}
                           </SkillsStackInner>
+                        </SkillsStack>
+                        <SkillsStack>
+                          <Document
+                            className="document-img"
+                            src={item.doc}
+                          ></Document>
                         </SkillsStack>
                       </TimelineBoxBody>
                     </TimelineBox>
@@ -239,4 +261,4 @@ const Education = () => {
   );
 };
 
-export default Education;
+export default Experience;

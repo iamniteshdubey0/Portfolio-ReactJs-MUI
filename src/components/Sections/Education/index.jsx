@@ -1,7 +1,7 @@
 import React from "react";
-import { tokens } from "../../utils/ThemesV2";
+import { tokens } from "../../../utils/ThemesV2";
 import { Box, Container, styled, Typography } from "@mui/material";
-import { metadataExp, experiences } from "../../data/constants";
+import { metadataExp, education } from "../../../data/constants";
 import Grid from "@mui/material/Grid";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
@@ -19,7 +19,9 @@ const Document = styled("img")(({ theme }) => ({
   transition: "all 0.3s linear",
 }));
 
-const SkillsHeader = styled(Box)(({ theme }) => ({
+// use SectionHeader Helper here ==============
+
+const SectionHeader = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -33,6 +35,21 @@ const SectionHeading = styled(Typography)(({ theme }) => ({
   textTransform: "capitalize",
 }));
 
+const SectionDescription = styled(Typography)(({ theme }) => ({
+  textAlign: "center",
+  width: "50%",
+  textTransform: "capitalize",
+  fontSize: "14px",
+  fontWeight: 400,
+  margin: "4px 0px 20px 0px",
+  color:
+    theme.palette.mode === "light"
+      ? tokens(theme.palette.mode).whiteSmoke[800]
+      : tokens(theme.palette.mode).whiteSmoke[400],
+}));
+// use SectionHeader Helper here ==============
+
+// use Timeline mircoComponent here ==============
 const TimelineBoxHeading = styled(Typography)(({ theme }) => ({
   fontSize: "16px",
   marginBottom: "4px",
@@ -68,6 +85,7 @@ const Span = styled(Typography)(({ theme }) => ({
 
 const TimelineBoxDescription = styled(Typography)(({ theme }) => ({
   textTransform: "capitalize",
+  textAlign: "left",
   fontSize: "14px",
   fontWeight: 400,
   margin: "4px",
@@ -78,27 +96,14 @@ const TimelineBoxDescription = styled(Typography)(({ theme }) => ({
 }));
 
 const SkillText = styled(Typography)(({ theme }) => ({
+  margin: "auto 0px",
   textTransform: "capitalize",
   fontSize: "12px",
   fontWeight: 400,
-  margin: "4px",
   color:
     theme.palette.mode === "light"
       ? tokens(theme.palette.mode).whiteSmoke[800]
       : tokens(theme.palette.mode).whiteSmoke[300],
-}));
-
-const SectionDescription = styled(Typography)(({ theme }) => ({
-  textAlign: "center",
-  width: "50%",
-  textTransform: "capitalize",
-  fontSize: "14px",
-  fontWeight: 400,
-  margin: "4px 0px 20px 0px",
-  color:
-    theme.palette.mode === "light"
-      ? tokens(theme.palette.mode).whiteSmoke[800]
-      : tokens(theme.palette.mode).whiteSmoke[400],
 }));
 
 const TimelineBox = styled(Box)(({ theme }) => ({
@@ -144,7 +149,7 @@ const TimelineBoxBody = styled(Box)(({ theme }) => ({
 }));
 
 const HeaderIcon = styled(Box)(({ theme }) => ({
-  width: "8%",
+  width: "16%",
   display: "flex",
   alignItems: "flex-start",
   justifyContent: "center",
@@ -157,7 +162,7 @@ const Image = styled("img")(({ theme }) => ({
 }));
 
 const HeaderDetails = styled(Box)(({ theme }) => ({
-  width: "92%",
+  width: "84%",
   display: "flex",
   alignItems: "flex-start",
   justifyContent: "flex-start",
@@ -168,7 +173,7 @@ const SkillsStack = styled(Grid)(({ theme }) => ({
   width: "100%",
   display: "flex",
   justifyContent: "flex-start",
-  alignItems: "flex-start",
+  alignItems: "center",
   gap: "3px",
 }));
 
@@ -177,34 +182,29 @@ const SkillsStackInner = styled(Grid)(({ theme }) => ({
   justifyContent: "flex-start",
   alignItems: "center",
   flexWrap: "wrap",
-  gap: "5px",
+  gap: "10px",
 }));
 
-const Experience = () => {
+// use Timeline mircoComponent here ==============
+
+const Education = () => {
   return (
     <Container maxWidth="md" sx={{ mt: 8, p: 2 }}>
-      <SkillsHeader>
+      {/* use SectionHeader Helper here ============== */}
+      <SectionHeader>
         <SectionHeading>{metadataExp.section}</SectionHeading>
         <SectionDescription>{metadataExp.desc} </SectionDescription>
-      </SkillsHeader>
+      </SectionHeader>
+      {/* use SectionHeader Helper here ============== */}
       <Grid container>
-        <Timeline
-          sx={{
-            [`& .${timelineItemClasses.root}:before`]: {
-              flex: 0,
-              padding: 0,
-            },
-          }}
-        >
-          {experiences && experiences.length > 0
-            ? experiences.map((item, index) => (
+
+         {/* use Timeline mircoComponent here ============== */}
+        <Timeline position="alternate">
+          {education && education.length > 0
+            ? education.map((item, index) => (
                 <TimelineItem key={index}>
                   <TimelineSeparator>
-                    <TimelineDot
-                      sx={(theme) => ({
-                        bgcolor: tokens(theme.palette.mode).primary[500],
-                      })}
-                    />
+                    <TimelineDot variant="outlined" />
                     <TimelineConnector
                       sx={(theme) => ({
                         bgcolor: tokens(theme.palette.mode).primary[500],
@@ -218,10 +218,8 @@ const Experience = () => {
                           <Image src={item.img}></Image>
                         </HeaderIcon>
                         <HeaderDetails>
-                          <TimelineBoxHeading>
-                            {item.company}
-                          </TimelineBoxHeading>
-                          <TimelineBoxPara>{item.role}</TimelineBoxPara>
+                          <TimelineBoxHeading>{item.school}</TimelineBoxHeading>
+                          <TimelineBoxPara>{item.degree}</TimelineBoxPara>
                           <Span>{item.date}</Span>
                         </HeaderDetails>
                       </TimelineBoxHeader>
@@ -230,24 +228,14 @@ const Experience = () => {
                           {item.desc}
                         </TimelineBoxDescription>
                         <SkillsStack container>
-                          <SkillsStackInner size={1}>
+                          <SkillsStackInner size={2}>
                             <TimelineBoxDescription sx={{ fontWeight: 600 }}>
-                              skills:
+                              Grade:
                             </TimelineBoxDescription>
                           </SkillsStackInner>
-                          <SkillsStackInner size={10}>
-                            {item.skills.map((skill, index) => (
-                              <SkillText key={index}>
-                                {"•"} {skill}
-                              </SkillText>
-                            ))}
+                          <SkillsStackInner size={9}>
+                            <SkillText>{item.grade}</SkillText>
                           </SkillsStackInner>
-                        </SkillsStack>
-                        <SkillsStack>
-                          <Document
-                            className="document-img"
-                            src={item.doc}
-                          ></Document>
                         </SkillsStack>
                       </TimelineBoxBody>
                     </TimelineBox>
@@ -256,9 +244,10 @@ const Experience = () => {
               ))
             : "No experemce"}
         </Timeline>
+        {/* use Timeline mircoComponent here ============== */}
       </Grid>
     </Container>
   );
 };
 
-export default Experience;
+export default Education;

@@ -1,9 +1,9 @@
 import { Box, styled, Typography, Link } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { useTheme } from "@mui/material";
-import { tokens } from "../../utils/ThemesV2";
-import ToggleBtn from "../MircoElements/ToggleBtn";
-import Btn from "../MircoElements/Btn";
+import { tokens } from "../../../utils/ThemesV2";
+import ToggleBtn from "../../MircoElements/ToggleBtn";
+import Btn from "../../MircoElements/Btn";
 import DownloadIcon from "@mui/icons-material/Download";
 
 const Navbar = () => {

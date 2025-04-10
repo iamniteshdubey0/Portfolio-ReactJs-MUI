@@ -1,14 +1,14 @@
 import { useTheme } from "@mui/material";
 import { tokens } from "./utils/ThemesV2";
 import { Box, styled } from "@mui/material";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Skills from "./components/Skills";
-import Experience from "./components/Experience";
-import Project from "./components/Project";
-import Education from "./components/Education";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Navbar from "./components/Sections/Navbar";
+import Hero from "./components/Sections/Hero";
+import Skills from "./components/Sections/Skills";
+import Experience from "./components/Sections/Experience";
+import Project from "./components/Sections/Project";
+import Education from "./components/Sections/Education";
+import Contact from "./components/Sections/Contact";
+import Footer from "./components/Sections/Footer";
 
 const App = () => {
   const theme = useTheme();

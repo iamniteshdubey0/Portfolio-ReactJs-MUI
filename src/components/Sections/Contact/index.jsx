@@ -1,9 +1,10 @@
 import React from "react";
-import { tokens } from "../../utils/ThemesV2";
+import { tokens } from "../../../utils/ThemesV2";
 import { Box, Container, styled, Typography, TextField } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import Btn from "../MircoElements/Btn";
+import Btn from "../../MircoElements/Btn";
 
+// use SectionHeader Helper here ==============
 const SectionHeader = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
@@ -29,17 +30,6 @@ const Span = styled(Typography)(({ theme }) => ({
       : tokens(theme.palette.mode).whiteSmoke[200],
 }));
 
-const FormHeading = styled(Typography)(({ theme }) => ({
-  textTransform: "capitalize",
-  fontSize: "16px",
-  fontWeight: 400,
-  margin: "4px",
-  color:
-    theme.palette.mode === "light"
-      ? tokens(theme.palette.mode).whiteSmoke[800]
-      : tokens(theme.palette.mode).whiteSmoke[300],
-}));
-
 const SectionDescription = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   width: "50%",
@@ -53,13 +43,15 @@ const SectionDescription = styled(Typography)(({ theme }) => ({
       : tokens(theme.palette.mode).whiteSmoke[400],
 }));
 
+// use SectionHeader Helper here ==============
+
 const FormBox = styled(Box)(({ theme }) => ({
-  width:'450px',
-  padding:'15px 25px',
-  display:'flex',
-  justifyContent:'flex-start',
-  alignItems:'center',
-  flexDirection:'column',
+  width: "450px",
+  padding: "15px 25px",
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "center",
+  flexDirection: "column",
   marginBottom: "32px",
   minHeight: "320px",
   cursor: "pointer",
@@ -76,19 +68,63 @@ const FormBox = styled(Box)(({ theme }) => ({
   },
 }));
 
+const FormHeading = styled(Typography)(({ theme }) => ({
+  textTransform: "capitalize",
+  fontSize: "16px",
+  fontWeight: 400,
+  margin: "4px",
+  color:
+    theme.palette.mode === "light"
+      ? tokens(theme.palette.mode).whiteSmoke[800]
+      : tokens(theme.palette.mode).whiteSmoke[300],
+}));
+
 const Contact = () => {
   return (
     <Container maxWidth="md" sx={{ mt: 8, p: 2 }}>
+      {/* use SectionHeader Helper here ============== */}
       <SectionHeader>
         <SectionHeading>Contact</SectionHeading>
         <SectionDescription>Call me </SectionDescription>
       </SectionHeader>
+
+      {/* use SectionHeader Helper here ============== */}
       <FormBox component="form" noValidate autoComplete="off">
         <FormHeading>Connect With Me!</FormHeading>
-        <TextField size="small" sx={{mt:2}} fullWidth id="outlined-basic" label="Email" variant="outlined" />
-        <TextField size="small" sx={{mt:2}} fullWidth id="outlined-basic" label="Name" variant="outlined" />
-        <TextField size="small" sx={{mt:2}} fullWidth id="outlined-basic" label="Email" variant="outlined" />
-        <TextField rows={4} multiline size="small" sx={{mt:2, mb:2}} fullWidth id="outlined-basic" label="Message" variant="outlined" />
+        <TextField
+          size="small"
+          sx={{ mt: 2 }}
+          fullWidth
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
+        />
+        <TextField
+          size="small"
+          sx={{ mt: 2 }}
+          fullWidth
+          id="outlined-basic"
+          label="Name"
+          variant="outlined"
+        />
+        <TextField
+          size="small"
+          sx={{ mt: 2 }}
+          fullWidth
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
+        />
+        <TextField
+          rows={4}
+          multiline
+          size="small"
+          sx={{ mt: 2, mb: 2 }}
+          fullWidth
+          id="outlined-basic"
+          label="Message"
+          variant="outlined"
+        />
         <Btn title={"Send"}></Btn>
       </FormBox>
     </Container>

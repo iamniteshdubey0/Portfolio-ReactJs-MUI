@@ -1,9 +1,9 @@
 import React from "react";
-import { tokens } from "../../utils/ThemesV2";
+import { tokens } from "../../../utils/ThemesV2";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { Box, Grid, Container, styled, Typography, Chip } from "@mui/material";
-import { projects } from "../../data/constants";
+import { projects } from "../../../data/constants";
 
 const SectionHeader = styled(Box)(({ theme }) => ({
   display: "flex",

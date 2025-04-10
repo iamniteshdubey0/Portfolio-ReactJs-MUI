@@ -2,13 +2,13 @@ import React from "react";
 import { Container, Box, styled, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { useTheme } from "@mui/material";
-import { tokens } from "../../utils/ThemesV2";
-import Btn from "../MircoElements/Btn";
+import { tokens } from "../../../utils/ThemesV2";
+import Btn from "../../MircoElements/Btn";
 import ArticleIcon from "@mui/icons-material/Article";
-import { Bio } from "../../data/constants";
+import { Bio } from "../../../data/constants";
 import Avatar from "@mui/material/Avatar";
-import Profile from "../../assets/image/NiteshDubey.png";
-import FloatingCard from "../MircoElements/FloatingCard";
+import Profile from "../../../assets/image/NiteshDubey.png";
+import FloatingCard from "../../MircoElements/FloatingCard";
 import Typewriter from "typewriter-effect";
 
 const Hero = () => {
