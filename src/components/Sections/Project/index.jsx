@@ -4,33 +4,9 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { Box, Grid, Container, styled, Typography, Chip } from "@mui/material";
 import { projects } from "../../../data/constants";
+import { CardHeading, CardSpan, CardDescription } from "../../Helper/Typo";
+import Section from "../../Helper/Section";
 
-const SectionHeader = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  padding: "15px 20px",
-}));
-
-const SectionHeading = styled(Typography)(({ theme }) => ({
-  fontSize: "26px",
-  fontWeight: 700,
-  margin: "4px 0px",
-  textTransform: "capitalize",
-}));
-
-const SectionDescription = styled(Typography)(({ theme }) => ({
-  textAlign: "center",
-  width: "50%",
-  textTransform: "capitalize",
-  fontSize: "14px",
-  fontWeight: 400,
-  margin: "4px 0px 20px 0px",
-  color:
-    theme.palette.mode === "light"
-      ? tokens(theme.palette.mode).whiteSmoke[800]
-      : tokens(theme.palette.mode).whiteSmoke[400],
-}));
 
 const ToggleTab = styled(ToggleButton)(({ theme }) => ({
   padding: "10px 15px",
@@ -119,38 +95,6 @@ const TechChip = styled(Chip)(({ theme }) => ({
   padding: "2px 4px",
 }));
 
-const CardHeading = styled(Typography)(({ theme }) => ({
-  fontSize: "14px",
-  marginBottom: "1px",
-  fontWeight: 600,
-  textTransform: "capitalize",
-  color:
-    theme.palette.mode === "light"
-      ? tokens(theme.palette.mode).whiteSmoke[800]
-      : tokens(theme.palette.mode).whiteSmoke[400],
-}));
-
-const Span = styled(Typography)(({ theme }) => ({
-  fontSize: "10px",
-  fontWeight: 500,
-  textTransform: "capitalize",
-  margin: "4px 0px",
-  color:
-    theme.palette.mode === "light"
-      ? tokens(theme.palette.mode).whiteSmoke[700]
-      : tokens(theme.palette.mode).whiteSmoke[200],
-}));
-
-const CardDescription = styled(Typography)(({ theme }) => ({
-  textTransform: "capitalize",
-  fontSize: "12px",
-  fontWeight: 400,
-  margin: "1px",
-  color:
-    theme.palette.mode === "light"
-      ? tokens(theme.palette.mode).whiteSmoke[800]
-      : tokens(theme.palette.mode).whiteSmoke[400],
-}));
 
 const Project = () => {
   const [alignment, setAlignment] = React.useState("left");
@@ -160,10 +104,7 @@ const Project = () => {
   };
   return (
     <Container maxWidth="lg" sx={{ mt: 8, p: 2, mb: 3 }}>
-      <SectionHeader>
-        <SectionHeading>Projects</SectionHeading>
-        <SectionDescription>My projects</SectionDescription>
-      </SectionHeader>
+      <Section heading={'Projects'} desc={'Here are some of my projects'}></Section>
       <Box
         sx={{
           display: "flex",
@@ -211,7 +152,7 @@ const Project = () => {
                     <CardDescription>
                       {item.description.slice(0, 100) + "..."}
                     </CardDescription>
-                    <Span>{item.date}</Span>
+                    <CardSpan>{item.date}</CardSpan>
                   </CardDetails>
                 </ProjectCard>
               ))

@@ -1,7 +1,7 @@
 import React from "react";
 import { tokens } from "../../../utils/ThemesV2";
 import { Box, Container, styled, Typography } from "@mui/material";
-import { metadataExp, education } from "../../../data/constants";
+import { education } from "../../../data/constants";
 import Grid from "@mui/material/Grid";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
@@ -9,45 +9,8 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import { timelineItemClasses } from "@mui/lab";
+import Section from "../../Helper/Section";
 
-const Document = styled("img")(({ theme }) => ({
-  width: "70px",
-  height: "70px",
-  borderRadius: "10px",
-  display: "none",
-  transition: "all 0.3s linear",
-}));
-
-// use SectionHeader Helper here ==============
-
-const SectionHeader = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  padding: "15px 20px",
-}));
-
-const SectionHeading = styled(Typography)(({ theme }) => ({
-  fontSize: "26px",
-  fontWeight: 700,
-  margin: "4px 0px",
-  textTransform: "capitalize",
-}));
-
-const SectionDescription = styled(Typography)(({ theme }) => ({
-  textAlign: "center",
-  width: "50%",
-  textTransform: "capitalize",
-  fontSize: "14px",
-  fontWeight: 400,
-  margin: "4px 0px 20px 0px",
-  color:
-    theme.palette.mode === "light"
-      ? tokens(theme.palette.mode).whiteSmoke[800]
-      : tokens(theme.palette.mode).whiteSmoke[400],
-}));
-// use SectionHeader Helper here ==============
 
 // use Timeline mircoComponent here ==============
 const TimelineBoxHeading = styled(Typography)(({ theme }) => ({
@@ -190,12 +153,7 @@ const SkillsStackInner = styled(Grid)(({ theme }) => ({
 const Education = () => {
   return (
     <Container maxWidth="md" sx={{ mt: 8, p: 2 }}>
-      {/* use SectionHeader Helper here ============== */}
-      <SectionHeader>
-        <SectionHeading>{metadataExp.section}</SectionHeading>
-        <SectionDescription>{metadataExp.desc} </SectionDescription>
-      </SectionHeader>
-      {/* use SectionHeader Helper here ============== */}
+      <Section heading={"Education"} desc={"My education has been a journey of self-discovery"}></Section>
       <Grid container>
 
          {/* use Timeline mircoComponent here ============== */}

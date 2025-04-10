@@ -5,6 +5,7 @@ import { tokens } from "../../../utils/ThemesV2";
 import ToggleBtn from "../../MircoElements/ToggleBtn";
 import Btn from "../../MircoElements/Btn";
 import DownloadIcon from "@mui/icons-material/Download";
+import { NavText } from "../../Helper/Typo";
 
 const Navbar = () => {
   const theme = useTheme();
@@ -35,7 +36,7 @@ const Navbar = () => {
     width: "100%",
     maxWidth: "1200px",
     padding: "0 6rem",
-    zIndex:20,
+    zIndex: 20,
   }));
 
   const NavLogo = styled(Grid)(({ theme }) => ({
@@ -77,16 +78,6 @@ const Navbar = () => {
           ? colors.secondary[500]
           : colors.secondary[500],
     },
-  }));
-
-  const NavText = styled(Typography)(({ theme }) => ({
-    color:
-      theme.palette.mode === "light"
-        ? colors.oxfordBlue[700]
-        : colors.whiteSmoke[500],
-    textTransform: "capitalize",
-    cursor: "pointer",
-    display: "inline",
   }));
 
   return (

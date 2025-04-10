@@ -10,6 +10,7 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import { timelineItemClasses } from "@mui/lab";
+import Section from "../../Helper/Section";
 
 const Document = styled("img")(({ theme }) => ({
   width: "70px",
@@ -26,12 +27,6 @@ const SkillsHeader = styled(Box)(({ theme }) => ({
   padding: "15px 20px",
 }));
 
-const SectionHeading = styled(Typography)(({ theme }) => ({
-  fontSize: "26px",
-  fontWeight: 700,
-  margin: "4px 0px",
-  textTransform: "capitalize",
-}));
 
 const TimelineBoxHeading = styled(Typography)(({ theme }) => ({
   fontSize: "16px",
@@ -88,18 +83,6 @@ const SkillText = styled(Typography)(({ theme }) => ({
       : tokens(theme.palette.mode).whiteSmoke[300],
 }));
 
-const SectionDescription = styled(Typography)(({ theme }) => ({
-  textAlign: "center",
-  width: "50%",
-  textTransform: "capitalize",
-  fontSize: "14px",
-  fontWeight: 400,
-  margin: "4px 0px 20px 0px",
-  color:
-    theme.palette.mode === "light"
-      ? tokens(theme.palette.mode).whiteSmoke[800]
-      : tokens(theme.palette.mode).whiteSmoke[400],
-}));
 
 const TimelineBox = styled(Box)(({ theme }) => ({
   minHeight: "120px",
@@ -184,8 +167,7 @@ const Experience = () => {
   return (
     <Container maxWidth="md" sx={{ mt: 8, p: 2 }}>
       <SkillsHeader>
-        <SectionHeading>{metadataExp.section}</SectionHeading>
-        <SectionDescription>{metadataExp.desc} </SectionDescription>
+      <Section heading={metadataExp.section} desc={metadataExp.desc}></Section>
       </SkillsHeader>
       <Grid container>
         <Timeline

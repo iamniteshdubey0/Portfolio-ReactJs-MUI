@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Box, styled, Typography } from "@mui/material";
+import { Container, styled } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { useTheme } from "@mui/material";
 import { tokens } from "../../../utils/ThemesV2";
@@ -10,6 +10,7 @@ import Avatar from "@mui/material/Avatar";
 import Profile from "../../../assets/image/NiteshDubey.png";
 import FloatingCard from "../../MircoElements/FloatingCard";
 import Typewriter from "typewriter-effect";
+import { SpanHero, MainHeading, SubHeading, Description } from "../../Helper/Typo";
 
 const Hero = () => {
   const theme = useTheme();
@@ -61,36 +62,6 @@ const Hero = () => {
     alignItems: "center",
   }));
 
-  const MainHeading = styled(Typography)(({ theme }) => ({
-    fontSize: "32px",
-    fontWeight: 700,
-    margin: "4px 0px",
-  }));
-
-  const SubHeading = styled("span")(({ theme }) => ({
-    fontSize: "20px",
-    fontWeight: 600,
-    margin: "4px 0px",
-    width: "100%",
-    display: "flex",
-    justifyContent: "flex-start",
-    gap: "5px",
-  }));
-
-  const Description = styled(Typography)(({ theme }) => ({
-    fontSize: "14px",
-    fontWeight: 400,
-    margin: "4px 0px 20px 0px",
-    color:
-      theme.palette.mode === "light"
-        ? colors.whiteSmoke[800]
-        : colors.whiteSmoke[400],
-  }));
-
-  const Span = styled("span")(({ theme }) => ({
-    color: theme.palette.primary.main, // Use MUI theme's primary color
-    cursor: "pointer",
-  }));
 
   // ======== Code for adding Circular pattern in back ground.==========
 
@@ -159,7 +130,7 @@ const Hero = () => {
           </MainHeading>
           <SubHeading>
             I am
-            <Span>
+            <SpanHero>
               <Typewriter
                 options={{
                   strings: Bio.roles,
@@ -167,7 +138,7 @@ const Hero = () => {
                   loop: true,
                 }}
               ></Typewriter>
-            </Span>
+            </SpanHero>
           </SubHeading>
           <Description>{Bio.description}</Description>
           <Btn size="large" title={"Explore CV"} icon={<ArticleIcon />}></Btn>

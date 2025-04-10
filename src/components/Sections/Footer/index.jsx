@@ -2,65 +2,69 @@ import React from "react";
 import { tokens } from "../../../utils/ThemesV2";
 import { Box, Container, styled, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import { SectionHeading, Span } from "../../Helper/Typo";
 
-const SectionHeader = styled(Box)(({ theme }) => ({
+const FooterContainer = styled(Grid)(({ theme }) => ({
   display: "flex",
-  flexDirection: "column",
   alignItems: "center",
+  justifyContent: "center",
   padding: "15px 20px",
 }));
 
-const SectionHeading = styled(Typography)(({ theme }) => ({
-  fontSize: "26px",
-  fontWeight: 700,
-  margin: "4px 0px",
-  textTransform: "capitalize",
+const FooterLeft = styled(Grid)(({ theme }) => ({
+  display: "flex",
+  alignItems: "flex-start",
+  justifyContent: "flex-start",
+  flexDirection: "column",
 }));
 
-const Span = styled(Typography)(({ theme }) => ({
-  fontSize: "12px",
-  fontWeight: 500,
-  textTransform: "capitalize",
-  marginBottom: "4px",
-  color:
-    theme.palette.mode === "light"
-      ? tokens(theme.palette.mode).whiteSmoke[700]
-      : tokens(theme.palette.mode).whiteSmoke[200],
+const FooterRight = styled(Grid)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 }));
 
-const SkillText = styled(Typography)(({ theme }) => ({
-  textTransform: "capitalize",
-  fontSize: "12px",
-  fontWeight: 400,
-  margin: "4px",
-  color:
-    theme.palette.mode === "light"
-      ? tokens(theme.palette.mode).whiteSmoke[800]
-      : tokens(theme.palette.mode).whiteSmoke[300],
+const FooterHeader = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
 }));
 
-const SectionDescription = styled(Typography)(({ theme }) => ({
-  textAlign: "center",
-  width: "50%",
-  textTransform: "capitalize",
-  fontSize: "14px",
-  fontWeight: 400,
-  margin: "4px 0px 20px 0px",
-  color:
-    theme.palette.mode === "light"
-      ? tokens(theme.palette.mode).whiteSmoke[800]
-      : tokens(theme.palette.mode).whiteSmoke[400],
+const FooterLinkGroup = styled(Grid)(({ theme }) => ({
+  marginTop: "5px",
+  display: "flex",
+  alignItems: "flex-start",
+  justifyContent: "flex-start",
+  width: "100%",
 }));
 
 const Footer = () => {
   return (
-    <Container maxWidth="md" sx={{p: 2 }}>
-      <SectionHeader>
-        <SectionHeading>Footer</SectionHeading>
-        <SectionDescription>Footer </SectionDescription>
-      </SectionHeader>
-      <Grid container>I am Footer</Grid>
-      {/* clipPath: `polygon(0 0, 100% 0, 100% 100%,30% 98%, 0 100%)`, */}
+    <Container maxWidth="md" sx={{ p: 2 }}>
+      <FooterContainer container>
+        <FooterLeft size={6}>
+          <FooterHeader>
+            <SectionHeading>portfolio</SectionHeading>
+          </FooterHeader>
+          <FooterLinkGroup container>
+            <Grid size={5}>
+              About
+              <Span>Link1</Span>
+              <Span>Link1</Span>
+              <Span>Link1</Span>
+              <Span>Link1</Span>
+            </Grid>
+            <Grid size={5}>
+              Projects
+              <Span>Link1</Span>
+              <Span>Link1</Span>
+              <Span>Link1</Span>
+              <Span>Link1</Span>
+            </Grid>
+          </FooterLinkGroup>
+        </FooterLeft>
+        <FooterRight size={6}></FooterRight>
+      </FooterContainer>
     </Container>
   );
 };
