@@ -4,7 +4,7 @@ import { tokens } from "../../utils/ThemesV2";
 
 const CardContainer = styled(Box)(({ theme }) => ({
   width: "100%",
-  minHeight:'220px',
+  minHeight: "220px",
   border: `1px solid ${tokens(theme.palette.mode).secondary[500]}`,
   textAlign: "center",
   padding: "10px",
@@ -13,7 +13,7 @@ const CardContainer = styled(Box)(({ theme }) => ({
     theme.palette.mode === "light"
       ? tokens(theme.palette.mode).whiteSmoke[100]
       : tokens(theme.palette.mode).oxfordBlue[300],
-  boxShadow: `rgb(251 217 87) 0px 0px 40px -20px;`,
+  boxShadow: `rgb(251 217 87) 0px 0px 40px -28px;`,
   //   rgb(251 217 87) yellow shadow
   //   rgb(248 102 36) red shadow
 }));
