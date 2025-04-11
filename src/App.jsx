@@ -27,9 +27,17 @@ const App = () => {
   });
 
   const Wrapper = styled(Box)(() => ({
-    background: `linear-gradient(38.73deg, rgba(204, 0, 187, 0.15) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.15) 100%)`,
+    background:
+      theme.palette.mode === "light"
+        ? `linear-gradient(135deg, ${colors.whiteSmoke[200]}, ${colors.whiteSmoke[500]})`
+        : `linear-gradient(135deg, ${colors.oxfordBlue[300]}, ${colors.teal[100]})`,
+
+    //       background: theme.palette.mode === "light"
+    // ? `radial-gradient(circle, ${colors.whiteSmoke[300]}, ${colors.whiteSmoke[500]})`
+    // : `radial-gradient(circle, ${colors.oxfordBlue[300]}, ${colors.teal[100]})`,
+
     width: "100%",
-    clipPath: `polygon(0 0, 100% 0, 100% 100%,27% 99%, 0 100%)`
+    clipPath: `polygon(0 0, 100% 0, 100% 100%,27% 99%, 0 100%)`,
   }));
 
   return (

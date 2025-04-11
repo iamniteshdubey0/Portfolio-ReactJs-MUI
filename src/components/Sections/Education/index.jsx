@@ -1,213 +1,26 @@
 import React from "react";
-import { tokens } from "../../../utils/ThemesV2";
-import { Box, Container, styled, Typography } from "@mui/material";
-import { education } from "../../../data/constants";
+import { Container } from "@mui/material";
+import { education, sectionData } from "../../../data/constants";
 import Grid from "@mui/material/Grid";
-import Timeline from "@mui/lab/Timeline";
-import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
 import Section from "../../Helper/Section";
 import TimeLineBox from "../../MircoElements/TimeLineBox";
-
-// use Timeline mircoComponent here ==============
-// const TimelineBoxHeading = styled(Typography)(({ theme }) => ({
-//   fontSize: "16px",
-//   marginBottom: "4px",
-//   fontWeight: 600,
-//   textTransform: "capitalize",
-//   color:
-//     theme.palette.mode === "light"
-//       ? tokens(theme.palette.mode).whiteSmoke[800]
-//       : tokens(theme.palette.mode).whiteSmoke[400],
-// }));
-
-// const TimelineBoxPara = styled(Typography)(({ theme }) => ({
-//   fontSize: "14px",
-//   fontWeight: 500,
-//   marginBottom: "4px",
-//   textTransform: "capitalize",
-//   color:
-//     theme.palette.mode === "light"
-//       ? tokens(theme.palette.mode).whiteSmoke[800]
-//       : tokens(theme.palette.mode).whiteSmoke[400],
-// }));
-
-// const Span = styled(Typography)(({ theme }) => ({
-//   fontSize: "12px",
-//   fontWeight: 500,
-//   textTransform: "capitalize",
-//   marginBottom: "4px",
-//   color:
-//     theme.palette.mode === "light"
-//       ? tokens(theme.palette.mode).whiteSmoke[700]
-//       : tokens(theme.palette.mode).whiteSmoke[200],
-// }));
-
-// const TimelineBoxDescription = styled(Typography)(({ theme }) => ({
-//   textTransform: "capitalize",
-//   textAlign: "left",
-//   fontSize: "14px",
-//   fontWeight: 400,
-//   margin: "4px",
-//   color:
-//     theme.palette.mode === "light"
-//       ? tokens(theme.palette.mode).whiteSmoke[800]
-//       : tokens(theme.palette.mode).whiteSmoke[400],
-// }));
-
-// const SkillText = styled(Typography)(({ theme }) => ({
-//   margin: "auto 0px",
-//   textTransform: "capitalize",
-//   fontSize: "12px",
-//   fontWeight: 400,
-//   color:
-//     theme.palette.mode === "light"
-//       ? tokens(theme.palette.mode).whiteSmoke[800]
-//       : tokens(theme.palette.mode).whiteSmoke[300],
-// }));
-
-// const TimelineBox = styled(Box)(({ theme }) => ({
-//   minHeight: "120px",
-//   cursor: "pointer",
-//   width: "100%",
-//   border: `0.1px solid ${tokens(theme.palette.mode).primary[500]}`,
-//   borderRadius: "8px",
-//   backgroundColor:
-//     theme.palette.mode === "light"
-//       ? tokens(theme.palette.mode).whiteSmoke[100]
-//       : tokens(theme.palette.mode).oxfordBlue[300],
-
-//   marginBottom: "16px",
-//   transition: "all 0.3s linear",
-//   "&:hover": {
-//     boxShadow: `rgb(248 102 36) 0px 0px 40px -20px`,
-//     transform: "translateY(-5px)",
-
-//     "& .document-img": {
-//       // Use a class instead
-//       display: "flex",
-//     },
-//   },
-// }));
-
-// const TimelineBoxHeader = styled(Box)(({ theme }) => ({
-//   padding: "15px",
-//   display: "flex",
-//   justifyContent: "flex-start",
-//   alignItems: "center",
-//   gap: "10px",
-// }));
-
-// const TimelineBoxBody = styled(Box)(({ theme }) => ({
-//   marginTop: "-24px",
-//   padding: "15px",
-//   display: "flex",
-//   flexDirection: "column",
-//   justifyContent: "center",
-//   alignItems: "flex-start",
-//   transition: "all 0.3s linear",
-// }));
-
-// const HeaderIcon = styled(Box)(({ theme }) => ({
-//   width: "16%",
-//   display: "flex",
-//   alignItems: "flex-start",
-//   justifyContent: "center",
-// }));
-
-// const Image = styled("img")(({ theme }) => ({
-//   width: "60px",
-//   height: "60px",
-//   borderRadius: "10px",
-// }));
-
-// const HeaderDetails = styled(Box)(({ theme }) => ({
-//   width: "84%",
-//   display: "flex",
-//   alignItems: "flex-start",
-//   justifyContent: "flex-start",
-//   flexDirection: "column",
-// }));
-
-// const SkillsStack = styled(Grid)(({ theme }) => ({
-//   width: "100%",
-//   display: "flex",
-//   justifyContent: "flex-start",
-//   alignItems: "center",
-//   gap: "3px",
-// }));
-
-// const SkillsStackInner = styled(Grid)(({ theme }) => ({
-//   display: "flex",
-//   justifyContent: "flex-start",
-//   alignItems: "center",
-//   flexWrap: "wrap",
-//   gap: "10px",
-// }));
-
-// use Timeline mircoComponent here ==============
 
 const Education = () => {
   return (
     <Container maxWidth="md" sx={{ mt: 8, p: 2 }}>
       <Section
-        heading={"Education"}
-        desc={"My education has been a journey of self-discovery"}
+        heading={sectionData[3].section}
+        desc={sectionData[3].desc}
       ></Section>
       <Grid container>
-        <TimeLineBox type={"education"} data={education} alignTimeLine="alternate"></TimeLineBox>
+        <TimeLineBox
+          type={"education"}
+          data={education}
+          alignTimeLine="alternate"
+        ></TimeLineBox>
       </Grid>
     </Container>
   );
 };
 
 export default Education;
-
-// <Timeline position="alternate">
-// {education && education.length > 0
-//   ? education.map((item, index) => (
-//       <TimelineItem key={index}>
-//         <TimelineSeparator>
-//           <TimelineDot variant="outlined" />
-//           <TimelineConnector
-//             sx={(theme) => ({
-//               bgcolor: tokens(theme.palette.mode).primary[500],
-//             })}
-//           />
-//         </TimelineSeparator>
-//         <TimelineContent>
-//           <TimelineBox>
-//             <TimelineBoxHeader>
-//               <HeaderIcon>
-//                 <Image src={item.img}></Image>
-//               </HeaderIcon>
-//               <HeaderDetails>
-//                 <TimelineBoxHeading>{item.school}</TimelineBoxHeading>
-//                 <TimelineBoxPara>{item.degree}</TimelineBoxPara>
-//                 <Span>{item.date}</Span>
-//               </HeaderDetails>
-//             </TimelineBoxHeader>
-//             <TimelineBoxBody>
-//               <TimelineBoxDescription>
-//                 {item.desc}
-//               </TimelineBoxDescription>
-//               <SkillsStack container>
-//                 <SkillsStackInner size={2}>
-//                   <TimelineBoxDescription sx={{ fontWeight: 600 }}>
-//                     Grade:
-//                   </TimelineBoxDescription>
-//                 </SkillsStackInner>
-//                 <SkillsStackInner size={9}>
-//                   <SkillText>{item.grade}</SkillText>
-//                 </SkillsStackInner>
-//               </SkillsStack>
-//             </TimelineBoxBody>
-//           </TimelineBox>
-//         </TimelineContent>
-//       </TimelineItem>
-//     ))
-//   : "No experemce"}
-// </Timeline>

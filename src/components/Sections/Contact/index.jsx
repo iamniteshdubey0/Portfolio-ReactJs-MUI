@@ -3,6 +3,7 @@ import { tokens } from "../../../utils/ThemesV2";
 import { Box, Container, styled, Typography, TextField } from "@mui/material";
 import Btn from "../../MircoElements/Btn";
 import Section from "../../Helper/Section";
+import { sectionData } from "../../../data/constants";
 
 const FormBox = styled(Box)(({ theme }) => ({
   width: "450px",
@@ -41,7 +42,10 @@ const FormHeading = styled(Typography)(({ theme }) => ({
 const Contact = () => {
   return (
     <Container maxWidth="md" sx={{ mt: 8, p: 2 }}>
-      <Section heading={"Contact"} desc={"Feel free to reach me for any questions or opportunites"}></Section>
+      <Section
+        heading={sectionData[5].section}
+        desc={sectionData[5].desc}
+      ></Section>
       <FormBox component="form" noValidate autoComplete="off">
         <FormHeading>Connect With Me!</FormHeading>
         <TextField

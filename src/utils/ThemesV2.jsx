@@ -10,7 +10,7 @@ import { createTheme } from "@mui/material/styles";
 // --error:#F44174,
 // --warning:#F46036;
 
-// --oxford-blue: #001d3d;
+// --oxford-blue:  ;
 // --bright-pink-crayola: #ef476f;
 // --sunglow: #ffd166;
 // --emerald: #06d6a0;

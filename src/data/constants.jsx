@@ -1,3 +1,34 @@
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+
+export const sectionData = [
+  {
+    section: "skills",
+    desc: "Here are some of my skills that I have been working on for the past year.",
+  },
+  {
+    section: "experience",
+    desc: "Here is my work experience and the roles I have undertaken.",
+  },
+  {
+    section: "projects",
+    desc: "Here are some of the projects I have worked on, showcasing my skills and creativity.",
+  },
+  {
+    section: "education",
+    desc: "Here is my educational background, including degrees and certifications.",
+  },
+  {
+    section: "certificates",
+    desc: "Here are the certifications I have earned to enhance my knowledge and expertise.",
+  },
+  {
+    section: "contact",
+    desc: "Feel free to reach out to me for any inquiries, collaborations, or opportunities.",
+  },
+];
+
 export const metadataSkills = {
   section: "skills",
   desc: "here are some my skills on which i have been working on for the past 1 years",
@@ -13,13 +44,43 @@ export const Bio = {
   roles: ["Frontend Developer", "UI/UX Designer", "Programmer"],
   description:
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
-  github: "https://github.com/rishavchanda",
   resume:
     "https://drive.google.com/file/d/1ffZrcMcn8UatXGIaautbbqpV7ADNaETA/view?usp=sharing",
-  linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-  twitter: "https://twitter.com/RishavChanda",
-  insta: "https://www.instagram.com/rishav_chanda/",
-  facebook: "https://www.facebook.com/rishav.chanda.165/",
+  social: [
+    {
+      platform: "Github",
+      link: "https://github.com/iamniteshdubey0",
+      userId: "@iamniteshdubey0 1",
+      card: {
+        top: "24%",
+        right: "20%",
+        bottom: "auto",
+        icon: <GitHubIcon />,
+      },
+    },
+    {
+      platform: "LinkedIn",
+      link: "www.linkedin.com/in/niteshdubey0",
+      userId: "@niteshdubey0",
+      card: {
+        top: "auto",
+        right: "16%",
+        bottom: "21%",
+        icon: <LinkedInIcon />,
+      },
+    },
+    {
+      platform: "Instagram",
+      link: "www.linkedin.com/in/niteshdubey0",
+      userId: "@i_am_nitesh_01",
+      card: {
+        top: "16%",
+        right: "42%",
+        bottom: "auto",
+        icon: <InstagramIcon />,
+      },
+    },
+  ],
 };
 
 export const skills = [

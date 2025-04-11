@@ -10,7 +10,12 @@ import Avatar from "@mui/material/Avatar";
 import Profile from "../../../assets/image/NiteshDubey.png";
 import FloatingCard from "../../MircoElements/FloatingCard";
 import Typewriter from "typewriter-effect";
-import { SpanHero, MainHeading, SubHeading, Description } from "../../Helper/Typo";
+import {
+  SpanHero,
+  MainHeading,
+  SubHeading,
+  Description,
+} from "../../Helper/Typo";
 
 const Hero = () => {
   const theme = useTheme();
@@ -61,7 +66,6 @@ const Hero = () => {
     justifyContent: "center",
     alignItems: "center",
   }));
-
 
   // ======== Code for adding Circular pattern in back ground.==========
 
@@ -151,26 +155,17 @@ const Hero = () => {
               sx={{ width: 300, height: 300 }}
             />
           </MiniBox>
-          <FloatingCard
-            textposition={"right"}
-            top="20%"
-            right="24%"
-          ></FloatingCard>
-          <FloatingCard
-            textposition={"left"}
-            top="16%"
-            right="42%"
-          ></FloatingCard>
-          <FloatingCard
-            textposition={"left"}
-            bottom="18%"
-            right="45%"
-          ></FloatingCard>
-          <FloatingCard
-            textposition={"right"}
-            bottom="25%"
-            right="21%"
-          ></FloatingCard>
+          {Bio.social.map((item, index) => (
+            <FloatingCard
+              key={index}
+              tag={item.userId}
+              link={item.link}
+              icon={item.card.icon}
+              top={item.card.top}
+              right={item.card.right}
+              bottom={item.card.bottom}
+            ></FloatingCard>
+          ))}
         </HeroBoxImg>
       </HeroBox>
     </Container>

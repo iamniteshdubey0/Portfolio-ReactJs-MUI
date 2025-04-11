@@ -1,33 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { tokens } from "../../../utils/ThemesV2";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import { Box, Grid, Container, styled, Typography, Chip } from "@mui/material";
-import { projects } from "../../../data/constants";
-import { CardHeading, CardSpan, CardDescription } from "../../Helper/Typo";
+import { Box, Grid, Container, styled} from "@mui/material";
+import { projects, sectionData } from "../../../data/constants";
 import Section from "../../Helper/Section";
+import ProjectCard from "../../MircoElements/ProjectCard";
 
+// const ToggleTab = styled(ToggleButton)(({ theme }) => ({
+//   padding: "10px 15px",
+//   fontSize: "14px",
+//   border: `0.1px solid ${tokens(theme.palette.mode).error[500]}`,
+//   color: tokens(theme.palette.mode).error[500],
+//   backgroundColor: "transparent",
+//   opacity: 0.7,
 
-const ToggleTab = styled(ToggleButton)(({ theme }) => ({
-  padding: "10px 15px",
-  fontSize: "14px",
-  border: `0.1px solid ${tokens(theme.palette.mode).error[500]}`,
-  color: tokens(theme.palette.mode).error[500],
-  backgroundColor: "transparent",
-  opacity: 0.7,
+//   "&:hover": {
+//     boxShadow: `rgb(248 102 36 / 50%) 0px 0px 40px -20px`,
+//     backgroundColor: tokens(theme.palette.mode).error[100],
+//     opacity: 0.9,
+//   },
 
-  "&:hover": {
-    boxShadow: `rgb(248 102 36 / 50%) 0px 0px 40px -20px`,
-    backgroundColor: tokens(theme.palette.mode).error[100],
-    opacity: 0.9,
-  },
-
-  "&:active": {
-    boxShadow: `rgb(248 102 36 / 50%) 0px 0px 40px -20px`,
-    backgroundColor: tokens(theme.palette.mode).error[100],
-    opacity: 1,
-  },
-}));
+//   "&:active": {
+//     boxShadow: `rgb(248 102 36 / 50%) 0px 0px 40px -20px`,
+//     backgroundColor: tokens(theme.palette.mode).error[100],
+//     opacity: 1,
+//   },
+// }));
 
 const ProjectWrapper = styled(Grid)(({ theme }) => ({
   width: "100%",
@@ -39,72 +38,24 @@ const ProjectWrapper = styled(Grid)(({ theme }) => ({
   marginTop: "32px",
 }));
 
-const ProjectCard = styled(Grid)(({ theme }) => ({
-  cursor: "pointer",
-  width: "90%",
-  maxWidth: "250px",
-  minHeight: "400px",
-  display: "flex",
-  justifyContent: "flex-start",
-  alignItems: "flex-start",
-  flexDirection: "column",
-  padding: "10px",
-  gap: "15px",
-  border: `0.1px solid ${tokens(theme.palette.mode).secondary[500]}`,
-  boxShadow: `rgb(251 217 87) 0px 0px 40px -20px`,
-  borderRadius: "5px",
-  transition: "all 0.3s linear",
-  backgroundColor:
-    theme.palette.mode === "light"
-      ? tokens(theme.palette.mode).whiteSmoke[500]
-      : tokens(theme.palette.mode).oxfordBlue[200],
-  "&:hover": {
-    transform: "translateY(-5px)",
-  },
-}));
-
-const CardImage = styled("img")(({ theme }) => ({
-  width: "100%",
-  height: "160px",
-  objectFit: "cover",
-  borderRadius: "8px",
-}));
-
-const TechStack = styled(Grid)(({ theme }) => ({
-  marginTop: "5px",
-  width: "100%",
-  display: "flex",
-  justifyContent: "flex-start",
-  alignItems: "flex-start",
-  flexWrap: "wrap",
-  gap: "5px",
-}));
-
-const CardDetails = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexWrap: "wrap",
-  flexDirection: "column",
-  justifyContent: "flex-start",
-  alignItems: "flex-start",
-  gap: "0px",
-}));
-
-const TechChip = styled(Chip)(({ theme }) => ({
-  borderRadius: "4px",
-  border: `0.1px solid ${tokens(theme.palette.mode).secondary[500]}`,
-  padding: "2px 4px",
-}));
-
-
 const Project = () => {
-  const [alignment, setAlignment] = React.useState("left");
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const handleAlignment = (event, newAlignment) => {
-    setAlignment(newAlignment);
+  const handleChange = (event) => {
+    setSelectedCategory(event.target.value);
   };
+
+  const filteredProjects = projects.filter(
+    (project) =>
+      selectedCategory === "all" || project.category === selectedCategory
+  );
+
   return (
     <Container maxWidth="lg" sx={{ mt: 8, p: 2, mb: 3 }}>
-      <Section heading={'Projects'} desc={'Here are some of my projects'}></Section>
+      <Section
+        heading={sectionData[2].section}
+        desc={sectionData[2].desc}
+      ></Section>
       <Box
         sx={{
           display: "flex",
@@ -117,44 +68,31 @@ const Project = () => {
       >
         <ToggleButtonGroup
           size="large"
-          value={alignment}
+          value={selectedCategory}
           exclusive
-          onChange={handleAlignment}
-          aria-label="text alignment"
+          onChange={handleChange}
+          aria-label="Project Category"
         >
-          <ToggleTab value="left" aria-label="left aligned">
-            one
-          </ToggleTab>
-          <ToggleTab value="center" aria-label="centered">
-            three
-          </ToggleTab>
-          <ToggleTab value="right" aria-label="right aligned">
-            three
-          </ToggleTab>
+          <ToggleButton value="all" aria-label="All">
+            All
+          </ToggleButton>
+          <ToggleButton value="web app" aria-label="Web Development">
+            Web
+          </ToggleButton>
+          <ToggleButton
+            value="machine learning"
+            aria-label="Mobile Development"
+          >
+            Mobile
+          </ToggleButton>
+          <ToggleButton value="android app" aria-label="UI/UX Design">
+            Design
+          </ToggleButton>
         </ToggleButtonGroup>
         <ProjectWrapper container>
-          {projects && projects.length > 0
-            ? projects.map((item, index) => (
-                <ProjectCard size={4} key={index}>
-                  <CardImage src={item.image}></CardImage>
-                  <TechStack>
-                    {item.tags.map((tag, index) => (
-                      <TechChip
-                        key={index}
-                        size="small"
-                        label={tag}
-                        variant="outlined"
-                      ></TechChip>
-                    ))}
-                  </TechStack>
-                  <CardDetails>
-                    <CardHeading>{item.title}</CardHeading>
-                    <CardDescription>
-                      {item.description.slice(0, 100) + "..."}
-                    </CardDescription>
-                    <CardSpan>{item.date}</CardSpan>
-                  </CardDetails>
-                </ProjectCard>
+          {filteredProjects && filteredProjects.length > 0
+            ? filteredProjects.map((item) => (
+                <ProjectCard key={item.id} data={item}></ProjectCard>
               ))
             : "no projects"}
         </ProjectWrapper>

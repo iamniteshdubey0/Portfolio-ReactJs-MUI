@@ -2,15 +2,15 @@ import React from "react";
 import { Container } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import GlowCard from "../../MircoElements/GlowCard";
-import { skills, metadataSkills } from "../../../data/constants";
+import { skills, sectionData } from "../../../data/constants";
 import Section from "../../Helper/Section";
 
 const Skills = () => {
   return (
     <Container maxWidth="md">
       <Section
-        heading={metadataSkills.section}
-        desc={metadataSkills.desc}
+        heading={sectionData[0].section}
+        desc={sectionData[0].desc}
       ></Section>
       <Grid container>
         {skills && skills.length > 0 ? (

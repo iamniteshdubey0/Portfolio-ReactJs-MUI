@@ -49,10 +49,7 @@ const SpamBox = styled(Box)(({ theme, textPosition }) => ({
   alignItems: "center",
   padding: "3px 6px",
   borderRadius: "4px",
-  transform:
-    textPosition === "left"
-      ? `translateX(-20px) translateY(-8px)`
-      : `translateX(20px) translateY(-8px)`,
+  transform: `translateX(20px) translateY(-8px)`,
 }));
 
 const SpamBoxText = styled(Typography)(({ theme }) => ({
@@ -64,16 +61,7 @@ const SpamBoxText = styled(Typography)(({ theme }) => ({
       : tokens(theme.palette.mode).oxfordBlue[400],
 }));
 
-const FloatingCard = ({
-  icon,
-  tag,
-  link,
-  top,
-  left,
-  right,
-  bottom,
-  textposition,
-}) => {
+const FloatingCard = ({ icon, tag, link, top, left, right, bottom }) => {
   return (
     <ButtonIconLink
       to={link || "#"}
@@ -83,7 +71,7 @@ const FloatingCard = ({
       bottom={bottom}
     >
       <IconBox>{icon ? icon : "😪"}</IconBox>
-      <SpamBox textposition={textposition}>
+      <SpamBox>
         <SpamBoxText>{tag ? tag : "sleeping"}</SpamBoxText>
       </SpamBox>
     </ButtonIconLink>
