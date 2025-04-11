@@ -13,7 +13,7 @@ const Span = styled(Typography)(({ theme }) => ({
 }));
 
 const HeadingText = styled(Typography)(({ theme, bold }) => ({
-  margin: "4px",
+  marginBottom: "2px",
   textTransform: "capitalize",
   fontSize: "16px",
   fontWeight: bold ? "600" : "400",
@@ -28,7 +28,7 @@ const ParaText = styled(Typography)(({ theme, bold }) => ({
   textAlign: "left",
   fontSize: "14px",
   fontWeight: bold ? "500" : "400",
-  margin: "4px",
+  marginBottom: "2px",
   color:
     theme.palette.mode === "light"
       ? tokens(theme.palette.mode).whiteSmoke[800]
