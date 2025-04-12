@@ -6,6 +6,7 @@ import ToggleBtn from "../../MircoElements/ToggleBtn";
 import Btn from "../../MircoElements/Btn";
 import DownloadIcon from "@mui/icons-material/Download";
 import { NavText } from "../../Helper/Typo";
+import { Navlinks } from "../../../data/uiConstants";
 
 const Navbar = () => {
   const theme = useTheme();
@@ -49,7 +50,7 @@ const Navbar = () => {
 
   const NavItem = styled(Grid)(({ theme }) => ({
     padding: 1,
-    gap: 16,
+    gap: 10,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -60,11 +61,12 @@ const Navbar = () => {
     cursor: "pointer",
   }));
 
-  const NavLink = styled(Link)(({ theme }) => ({
+  const NavLink = styled('a')(({ theme }) => ({
     textDecoration: "none",
+    fontSize:'14px',
     cursor: "pointer",
     padding: 1,
-    margin: "0px 10px",
+    margin: "0px 6px",
     display: "inline",
     textTransform: "capitalize",
     color:
@@ -90,15 +92,11 @@ const Navbar = () => {
           </NavLink>
         </NavLogo>
         <NavItem size={6}>
-          <NavItem>
-            <NavLink>about</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink>skills</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink>experience</NavLink>
-          </NavItem>
+          {Navlinks.map((item, index) => (
+            <NavItem key={index}>
+              <NavLink href={item.link}>{item.label}</NavLink>
+            </NavItem>
+          ))}
         </NavItem>
         <NavItem size={3}>
           <ToggleBtn></ToggleBtn>

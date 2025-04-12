@@ -7,12 +7,12 @@ import Section from "../../Helper/Section";
 
 const Skills = () => {
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" id="skills">
       <Section
         heading={sectionData[0].section}
         desc={sectionData[0].desc}
       ></Section>
-      <Grid container>
+      <Grid container> 
         {skills && skills.length > 0 ? (
           skills.map((item, index) => (
             <Grid

@@ -2,6 +2,25 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
+export const Navlinks = [
+  {
+    label: "experience",
+    link: "#experience",
+  },
+  {
+    label: "education",
+    link: "#education",
+  },
+  {
+    label: "projects",
+    link: "#projects",
+  },
+  {
+    label: "skills",
+    link: "#skills",
+  },
+];
+
 export const FooterSocial = [
   {
     platform: "Github",

@@ -28,7 +28,7 @@ const Project = () => {
   );
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 8, p: 2, mb: 3 }}>
+    <Container id="projects" maxWidth="lg" sx={{ mt: 8, p: 2, mb: 3 }}>
       <Section
         heading={sectionData[2].section}
         desc={sectionData[2].desc}
