@@ -49,7 +49,7 @@ export const Bio = {
   social: [
     {
       platform: "Github",
-      link: "https://github.com/iamniteshdubey0",
+      link: "https://www.github.com/iamniteshdubey0",
       userId: "@iamniteshdubey0 1",
       card: {
         top: "24%",
@@ -60,7 +60,7 @@ export const Bio = {
     },
     {
       platform: "LinkedIn",
-      link: "www.linkedin.com/in/niteshdubey0",
+      link: "https://www.linkedin.com/in/niteshdubey0",
       userId: "@niteshdubey0",
       card: {
         top: "auto",
@@ -71,7 +71,7 @@ export const Bio = {
     },
     {
       platform: "Instagram",
-      link: "www.linkedin.com/in/niteshdubey0",
+      link: "https://www.linkedin.com/in/niteshdubey0",
       userId: "@i_am_nitesh_01",
       card: {
         top: "16%",

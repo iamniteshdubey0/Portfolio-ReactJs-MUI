@@ -15,7 +15,7 @@ const SkillsHeader = styled(Box)(({ theme }) => ({
 
 const Experience = () => {
   return (
-    <Container maxWidth="md" sx={{ mt: 8, p: 2 }}>
+    <Container id="experience" maxWidth="md" sx={{ mt: 8, p: 2 }}>
       <SkillsHeader>
         <Section
           heading={sectionData[1].section}

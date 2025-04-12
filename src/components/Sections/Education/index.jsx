@@ -7,7 +7,7 @@ import TimeLineBox from "../../MircoElements/TimeLineBox";
 
 const Education = () => {
   return (
-    <Container maxWidth="md" sx={{ mt: 8, p: 2 }}>
+    <Container id="education" maxWidth="md" sx={{ mt: 8, p: 2 }}>
       <Section
         heading={sectionData[3].section}
         desc={sectionData[3].desc}

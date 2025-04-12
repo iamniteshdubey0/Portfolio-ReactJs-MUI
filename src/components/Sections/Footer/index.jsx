@@ -2,9 +2,7 @@ import React from "react";
 import { tokens } from "../../../utils/ThemesV2";
 import { Box, Container, styled, Grid, Button } from "@mui/material";
 import { SectionHeading, Span, ParaText } from "../../Helper/Typo";
-import { Link } from "@mui/material";
-import Btn from "../../MircoElements/Btn";
-import { Bio } from "../../../data/constants";
+import { FooterLinks, FooterSocial } from "../../../data/uiConstants";
 
 const FooterContainer = styled(Grid)(({ theme }) => ({
   display: "flex",
@@ -41,7 +39,7 @@ const FooterLinkGroup = styled(Grid)(({ theme }) => ({
   width: "100%",
 }));
 
-const FooterLink = styled(Link)(({ theme }) => ({
+const FooterLink = styled("a")(({ theme }) => ({
   textDecoration: "none",
   cursor: "pointer",
   color:
@@ -60,46 +58,30 @@ const Footer = () => {
             <SectionHeading>⭐ portfolio</SectionHeading>
           </FooterHeader>
           <FooterLinkGroup container>
-            <Grid size={5}>
-              <ParaText bold="true" mt={2}>
-                About
-              </ParaText>
-              {/* Link not working */}
-              <FooterLink to={"#contact"}>
-                <Span mt={1}>{">"} Eductaion</Span>
-              </FooterLink>
-              <FooterLink>
-                <Span mt={1}>{">"} Projects</Span>
-              </FooterLink>
-              <FooterLink>
-                <Span mt={1}>{">"} Experiences</Span>
-              </FooterLink>
-              <FooterLink>
-                <Span mt={1}>{">"} Certificates</Span>
-              </FooterLink>
-            </Grid>
-            <Grid size={5}>
-              <ParaText bold="true" mt={2}>
-                Projects
-              </ParaText>
-              <FooterLink>
-                <Span mt={1}>{">"} Eductaion</Span>
-              </FooterLink>
-              <FooterLink>
-                <Span mt={1}>{">"} Projects</Span>
-              </FooterLink>
-              <FooterLink>
-                <Span mt={1}>{">"} Experiences</Span>
-              </FooterLink>
-              <FooterLink>
-                <Span mt={1}>{">"} Certificates</Span>
-              </FooterLink>
-            </Grid>
+            {FooterLinks.map((item, index) => (
+              <Grid size={5} key={index}>
+                <ParaText bold="true" mt={2}>
+                  {item.label}
+                </ParaText>
+                {item.link.map((item, index) => (
+                  <FooterLink href={item.hyperLink} key={index}>
+                    <Span mt={0.5}>{">"} {item.linkLabel}</Span>
+                  </FooterLink>
+                ))}
+              </Grid>
+            ))}
           </FooterLinkGroup>
         </FooterLeft>
         <FooterRight size={6}>
-          {Bio.social.map((item, index) => (
-            <Button color="secondary" variant="contained" key={index} endIcon={item.card.icon}>
+          {FooterSocial.map((item, index) => (
+            <Button
+              target="_blank"
+              href={item.link}
+              color="secondary"
+              variant="contained"
+              key={index}
+              endIcon={item.icon}
+            >
               {item.platform}
             </Button>
           ))}

@@ -2,7 +2,7 @@ import { Box, Link, styled, Typography } from "@mui/material";
 import React from "react";
 import { tokens } from "../../utils/ThemesV2";
 
-const ButtonIconLink = styled(Link)(({ theme, ...props }) => ({
+const ButtonIconLink = styled('a')(({ theme, ...props }) => ({
   zIndex: 11,
   position: "absolute",
   top: props.top || "auto",
@@ -64,7 +64,9 @@ const SpamBoxText = styled(Typography)(({ theme }) => ({
 const FloatingCard = ({ icon, tag, link, top, left, right, bottom }) => {
   return (
     <ButtonIconLink
-      to={link || "#"}
+      href={link || "#"}
+      target="_blank"
+      rel="noopener noreferrer"
       top={top}
       right={right}
       left={left}
