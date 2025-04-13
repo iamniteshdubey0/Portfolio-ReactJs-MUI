@@ -1,6 +1,7 @@
 import { Box, Link, styled, Typography } from "@mui/material";
 import React from "react";
 import { tokens } from "../../utils/ThemesV2";
+import { motion } from "framer-motion";
 
 const CardContainer = styled(Box)(({ theme }) => ({
   width: "100%",
@@ -69,9 +70,12 @@ const SkillsImage = styled("img")(({ theme }) => ({
   backgroundSize: "cover",
 }));
 
-const GlowCard = ({ title, skills }) => {
+const MotionCardContainer = motion(CardContainer);
+
+const GlowCard = ({ title, skills, customVariant }) => {
   return (
-    <CardContainer>
+    
+    <MotionCardContainer variants={customVariant}>
       <CardHeading>{title}</CardHeading>
       <CardBody>
         {skills && skills.length > 0 ? (
@@ -86,7 +90,7 @@ const GlowCard = ({ title, skills }) => {
           <p>No skills available</p>
         )}
       </CardBody>
-    </CardContainer>
+    </MotionCardContainer>
   );
 };
 

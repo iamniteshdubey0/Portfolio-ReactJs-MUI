@@ -1,8 +1,9 @@
 import { Box, Link, styled, Typography } from "@mui/material";
 import React from "react";
 import { tokens } from "../../utils/ThemesV2";
+import { motion } from "framer-motion";
 
-const ButtonIconLink = styled('a')(({ theme, ...props }) => ({
+const ButtonIconLink = styled("a")(({ theme, ...props }) => ({
   zIndex: 11,
   position: "absolute",
   top: props.top || "auto",
@@ -12,7 +13,7 @@ const ButtonIconLink = styled('a')(({ theme, ...props }) => ({
   textDecoration: "none",
   cursor: "pointer",
   textTransform: "capitalize",
-  opacity: 0.6,
+  opacity: 0.8,
   color:
     theme.palette.mode === "light"
       ? tokens(theme.palette.mode).oxfordBlue[400]
@@ -34,9 +35,9 @@ const IconBox = styled(Box)(({ theme }) => ({
   height: "40px",
   borderRadius: "50%",
   fontSize: "24px",
-  border: `1px solid ${tokens(theme.palette.mode).primary[300]}`,
+  border: `1px solid ${tokens(theme.palette.mode).teal[500]}`,
   backgroundColor: "transparent",
-  color: tokens(theme.palette.mode).primary[500],
+  color: tokens(theme.palette.mode).teal[500],
 }));
 
 const SpamBox = styled(Box)(({ theme, textPosition }) => ({
@@ -61,9 +62,11 @@ const SpamBoxText = styled(Typography)(({ theme }) => ({
       : tokens(theme.palette.mode).oxfordBlue[400],
 }));
 
+const MotionButtonIconLink = motion(ButtonIconLink);
+
 const FloatingCard = ({ icon, tag, link, top, left, right, bottom }) => {
   return (
-    <ButtonIconLink
+    <MotionButtonIconLink
       href={link || "#"}
       target="_blank"
       rel="noopener noreferrer"
@@ -71,12 +74,20 @@ const FloatingCard = ({ icon, tag, link, top, left, right, bottom }) => {
       right={right}
       left={left}
       bottom={bottom}
+      animate={{
+        rotate: [0, -5, 5, -5, 5, 0], // Wiggle sequence
+      }}
+      transition={{
+        duration: 0.6,
+        repeat: Infinity,
+        repeatDelay: 2,
+      }}
     >
       <IconBox>{icon ? icon : "😪"}</IconBox>
       <SpamBox>
         <SpamBoxText>{tag ? tag : "sleeping"}</SpamBoxText>
       </SpamBox>
-    </ButtonIconLink>
+    </MotionButtonIconLink>
   );
 };
 

@@ -10,6 +10,21 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import { timelineItemClasses } from "@mui/lab";
 import { HeadingText, ParaText, Span, SkillText } from "../Helper/Typo";
+import { motion } from "framer-motion";
+
+
+const fadeScaleVariant = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: (i) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      delay: i * 0.2, // stagger each item
+      ease: "easeOut",
+    },
+  }),
+};
 
 const Document = styled("img")(({}) => ({
   width: "70px",
@@ -124,6 +139,8 @@ const TimeLineBox = ({ data, alignTimeLine, outlined, type }) => {
         }),
       };
 
+  const MotionTimelineContent = motion(TimelineContent);
+
   return (
     <Timeline {...timelineProps}>
       {data && data.length > 0
@@ -137,7 +154,13 @@ const TimeLineBox = ({ data, alignTimeLine, outlined, type }) => {
                   })}
                 />
               </TimelineSeparator>
-              <TimelineContent>
+              <MotionTimelineContent
+                variants={fadeScaleVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                custom={index}
+              >
                 <TimelineBox>
                   <TimelineBoxHeader>
                     <HeaderIcon type={type}>
@@ -156,12 +179,12 @@ const TimeLineBox = ({ data, alignTimeLine, outlined, type }) => {
                   <TimelineBoxBody>
                     <ParaText sx={{ mb: 1 }}>{item.desc}</ParaText>
                     <SkillsStack container>
-                      <SkillsStackInner size={type === "education"? 2 : 1}>
+                      <SkillsStackInner size={type === "education" ? 2 : 1}>
                         <ParaText sx={{ fontWeight: 600 }}>
                           {item.skills ? "Skills:" : "Grade:"}
                         </ParaText>
                       </SkillsStackInner>
-                      <SkillsStackInner size={type === "education"? 9 : 10}>
+                      <SkillsStackInner size={type === "education" ? 9 : 10}>
                         {item.skills ? (
                           item.skills.map((skill, index) => (
                             <SkillText key={index}>
@@ -185,7 +208,7 @@ const TimeLineBox = ({ data, alignTimeLine, outlined, type }) => {
                     </SkillsStack>
                   </TimelineBoxBody>
                 </TimelineBox>
-              </TimelineContent>
+              </MotionTimelineContent>
             </TimelineItem>
           ))
         : "No experemce"}

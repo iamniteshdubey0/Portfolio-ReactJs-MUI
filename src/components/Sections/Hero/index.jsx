@@ -10,6 +10,8 @@ import Avatar from "@mui/material/Avatar";
 import Profile from "../../../assets/image/NiteshDubey.png";
 import FloatingCard from "../../MircoElements/FloatingCard";
 import Typewriter from "typewriter-effect";
+import { motion } from "framer-motion";
+
 import {
   SpanHero,
   MainHeading,
@@ -47,7 +49,7 @@ const Hero = () => {
       "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Cellipse fill='none' stroke-width='200' id='a' rx='600' ry='450'/%3E%3C/defs%3E%3Cg style='transform-origin:center'%3E%3Cg transform='rotate(95.4 0 0)' style='transform-origin:center'%3E%3Cg transform='rotate(-139.2 0 0)' style='transform-origin:center'%3E%3Cg transform='translate(1000 750)'%3E%3Cuse stroke='%2327002B' href='%23a' transform='rotate(-52.2 0 0) scale(0.478)'/%3E%3Cuse stroke='%23340331' href='%23a' transform='rotate(-43.5 0 0) scale(0.565)'/%3E%3Cuse stroke='%23420436' href='%23a' transform='rotate(-34.8 0 0) scale(0.652)'/%3E%3Cuse stroke='%2351063b' href='%23a' transform='rotate(-26.1 0 0) scale(0.739)'/%3E%3Cuse stroke='%235f093f' href='%23a' transform='rotate(-17.4 0 0) scale(0.826)'/%3E%3Cuse stroke='%236e0d42' href='%23a' transform='rotate(-8.7 0 0) scale(0.913)'/%3E%3Cuse stroke='%237c1244' href='%23a'/%3E%3Cuse stroke='%238b1945' href='%23a' transform='rotate(8.7 0 0) scale(1.087)'/%3E%3Cuse stroke='%23992045' href='%23a' transform='rotate(17.4 0 0) scale(1.174)'/%3E%3Cuse stroke='%23a62945' href='%23a' transform='rotate(26.1 0 0) scale(1.261)'/%3E%3Cuse stroke='%23b33244' href='%23a' transform='rotate(34.8 0 0) scale(1.348)'/%3E%3Cuse stroke='%23c03c42' href='%23a' transform='rotate(43.5 0 0) scale(1.435)'/%3E%3Cuse stroke='%23cb4740' href='%23a' transform='rotate(52.2 0 0) scale(1.522)'/%3E%3Cuse stroke='%23d5523c' href='%23a' transform='rotate(60.9 0 0) scale(1.609)'/%3E%3Cuse stroke='%23df5f39' href='%23a' transform='rotate(69.6 0 0) scale(1.696)'/%3E%3Cuse stroke='%23e76b34' href='%23a' transform='rotate(78.3 0 0) scale(1.783)'/%3E%3Cuse stroke='%23ef792f' href='%23a' transform='rotate(87 0 0) scale(1.87)'/%3E%3Cuse stroke='%23f58729' href='%23a' transform='rotate(95.7 0 0) scale(1.957)'/%3E%3Cuse stroke='%23fa9522' href='%23a' transform='rotate(104.4 0 0) scale(2.044)'/%3E%3Cuse stroke='%23fda31a' href='%23a' transform='rotate(113.1 0 0) scale(2.131)'/%3E%3Cuse stroke='%23ffb210' href='%23a' transform='rotate(121.8 0 0) scale(2.218)'/%3E%3Cuse stroke='%23ffc106' href='%23a' transform='rotate(130.5 0 0) scale(2.305)'/%3E%3Cuse stroke='%23FFD000' href='%23a' transform='rotate(139.2 0 0) scale(2.392)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"
     )`,
     backgroundAttachment: "fixed",
-    backgroundSize: "cover",
+    backgroundSize: "contain",
   }));
 
   const HeroBoxDetails = styled(Grid)(({ theme }) => ({
@@ -124,14 +126,23 @@ const Hero = () => {
   //         </OuterLayer1>
   //       </Wrapper>
 
+  const MotionHeroBoxDetails = motion(HeroBoxDetails);
+  const MotionMiniBox = motion(MiniBox);
+
   return (
-    <Container maxWidth="md" sx={{ maxHeight: "80vh", overflowY: "hidden" }}>
-      <HeroBox container>
-        <HeroBoxDetails size={{ xs: 12, sm: 6 }}>
+    <Container maxWidth="md" sx={{ maxHeight: "80vh", overflow: "hidden" }}>
+      <HeroBox container sx={{ overflow: "hidden" }}>
+        <MotionHeroBoxDetails
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          size={{ xs: 12, sm: 6 }}
+        >
           <MainHeading>
             Hi, I am <br />
             {Bio.name}
           </MainHeading>
+
           <SubHeading>
             I am
             <SpanHero>
@@ -146,15 +157,20 @@ const Hero = () => {
           </SubHeading>
           <Description>{Bio.description}</Description>
           <Btn size="large" title={"Explore CV"} icon={<ArticleIcon />}></Btn>
-        </HeroBoxDetails>
+        </MotionHeroBoxDetails>
+
         <HeroBoxImg size={{ xs: 12, sm: 6 }}>
-          <MiniBox>
+          <MotionMiniBox
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <Avatar
               alt="Profile"
               src={Profile}
               sx={{ width: 300, height: 300 }}
             />
-          </MiniBox>
+          </MotionMiniBox>
           {Bio.social.map((item, index) => (
             <FloatingCard
               key={index}

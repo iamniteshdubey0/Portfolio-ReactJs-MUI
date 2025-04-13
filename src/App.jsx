@@ -9,6 +9,7 @@ import Project from "./components/Sections/Project";
 import Education from "./components/Sections/Education";
 import Contact from "./components/Sections/Contact";
 import Footer from "./components/Sections/Footer";
+import Certificates from "./components/Sections/Certificates";
 
 const App = () => {
   const theme = useTheme();
@@ -49,6 +50,7 @@ const App = () => {
           <Skills></Skills>
           <Experience></Experience>
           <Project></Project>
+          <Certificates></Certificates>
           <Education></Education>
           <Contact></Contact>
         </Wrapper>

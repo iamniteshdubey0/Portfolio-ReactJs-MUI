@@ -4,6 +4,23 @@ import Grid from "@mui/material/Grid";
 import GlowCard from "../../MircoElements/GlowCard";
 import { skills, sectionData } from "../../../data/constants";
 import Section from "../../Helper/Section";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.4, // delay between cards
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const MotionWrapper = motion(Grid);
 
 const Skills = () => {
   return (
@@ -12,7 +29,13 @@ const Skills = () => {
         heading={sectionData[0].section}
         desc={sectionData[0].desc}
       ></Section>
-      <Grid container> 
+      <MotionWrapper
+        container
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {skills && skills.length > 0 ? (
           skills.map((item, index) => (
             <Grid
@@ -25,13 +48,17 @@ const Skills = () => {
                 p: 2,
               }}
             >
-              <GlowCard title={item?.title} skills={item?.skills || []} />
+              <GlowCard
+                title={item?.title}
+                customVariant={cardVariants}
+                skills={item?.skills || []}
+              />
             </Grid>
           ))
         ) : (
           <p>No skills available</p>
         )}
-      </Grid>
+      </MotionWrapper>
     </Container>
   );
 };
