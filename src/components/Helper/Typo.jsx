@@ -15,6 +15,7 @@ const Span = styled(Typography)(({ theme }) => ({
 const HeadingText = styled(Typography)(({ theme, bold }) => ({
   marginBottom: "2px",
   textTransform: "capitalize",
+  textAlign:'left',
   fontSize: "16px",
   fontWeight: bold ? "600" : "400",
   color:

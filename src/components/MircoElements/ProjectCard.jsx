@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 
 const ProCard = styled(Grid)(({ theme }) => ({
   cursor: "pointer",
-  width: "90%",
-  maxWidth: "250px",
+  width: "100%",
+  // maxWidth: "250px",
   minHeight: "360px",
   display: "flex",
   justifyContent: "flex-start",

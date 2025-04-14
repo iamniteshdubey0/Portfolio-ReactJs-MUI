@@ -9,7 +9,6 @@ import SendIcon from "@mui/icons-material/Send";
 import { motion } from "framer-motion";
 
 const FormBox = styled(Box)(({ theme }) => ({
-  width: "450px",
   padding: "15px 25px",
   display: "flex",
   justifyContent: "flex-start",
@@ -56,7 +55,7 @@ const Contact = () => {
         container
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
       >
-        <Grid size={6}>
+        <Grid size={{xs:12, sm:6}} sx={{display:{xs:'none', sm:'block'}}}>
           <MotionImage
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -65,7 +64,7 @@ const Contact = () => {
             src="src\assets\mailbox.svg"
           ></MotionImage>
         </Grid>
-        <Grid size={6}>
+        <Grid size={{xs:12, sm:6}}>
           <MotionFormBox
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}

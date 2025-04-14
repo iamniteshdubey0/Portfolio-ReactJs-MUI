@@ -1,11 +1,8 @@
 import React from "react";
 import { Button, styled } from "@mui/material";
-import { useTheme } from "@mui/material";
-import { tokens } from "../../utils/ThemesV2";
 import { motion } from "framer-motion";
 
 const Btn = ({ title, onclick, icon, size }) => {
-  const theme = useTheme();
 
   const CustomButton = styled(Button)(({ theme }) => ({
     padding: "10px 15px",

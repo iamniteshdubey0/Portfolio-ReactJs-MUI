@@ -9,6 +9,7 @@ const FooterContainer = styled(Grid)(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   padding: "15px 20px",
+  gap:'10px'
 }));
 
 const FooterLeft = styled(Grid)(({ theme }) => ({
@@ -53,7 +54,7 @@ const Footer = () => {
   return (
     <Container maxWidth="md" sx={{ p: 2 }}>
       <FooterContainer container>
-        <FooterLeft size={6}>
+        <FooterLeft size={{xs:12, md:5.5}}>
           <FooterHeader>
             <SectionHeading>⭐ portfolio</SectionHeading>
           </FooterHeader>
@@ -72,7 +73,7 @@ const Footer = () => {
             ))}
           </FooterLinkGroup>
         </FooterLeft>
-        <FooterRight size={6}>
+        <FooterRight size={{xs:12, md:5.5}}>
           {FooterSocial.map((item, index) => (
             <Button
               target="_blank"

@@ -40,7 +40,7 @@ const Skills = () => {
           skills.map((item, index) => (
             <Grid
               key={index}
-              size={6}
+              size={{xs:12, sm:6}}
               sx={{
                 display: "flex",
                 justifyContent: "center",

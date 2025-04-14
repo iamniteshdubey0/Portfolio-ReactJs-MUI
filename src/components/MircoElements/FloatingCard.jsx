@@ -67,6 +67,7 @@ const MotionButtonIconLink = motion(ButtonIconLink);
 const FloatingCard = ({ icon, tag, link, top, left, right, bottom }) => {
   return (
     <MotionButtonIconLink
+    sx={{display:{xs:'none', md:'block'}}}
       href={link || "#"}
       target="_blank"
       rel="noopener noreferrer"

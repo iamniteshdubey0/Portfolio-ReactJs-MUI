@@ -34,7 +34,7 @@ const Document = styled("img")(({}) => ({
   transition: "all 0.3s linear",
 }));
 
-const TimelineBox = styled(Box)(({ theme }) => ({
+const TimelineBox = styled(Grid)(({ theme }) => ({
   minHeight: "120px",
   cursor: "pointer",
   width: "100%",
@@ -58,15 +58,15 @@ const TimelineBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const TimelineBoxHeader = styled(Box)(({}) => ({
+const TimelineBoxHeader = styled(Grid)(({}) => ({
   padding: "15px",
   display: "flex",
   justifyContent: "flex-start",
   alignItems: "center",
-  gap: "10px",
+  gap: "15px",
 }));
 
-const TimelineBoxBody = styled(Box)(({}) => ({
+const TimelineBoxBody = styled(Grid)(({}) => ({
   marginTop: "-24px",
   padding: "15px",
   display: "flex",
@@ -76,8 +76,8 @@ const TimelineBoxBody = styled(Box)(({}) => ({
   transition: "all 0.3s linear",
 }));
 
-const HeaderIcon = styled(Box)(({ type }) => ({
-  width: type === "education" ? "16%" : "8%",
+const HeaderIcon = styled(Grid)(({ type }) => ({
+  // width: type === "education" ? "16%" : "8%",
   display: "flex",
   alignItems: "flex-start",
   justifyContent: "center",
@@ -89,8 +89,8 @@ const Image = styled("img")(({}) => ({
   borderRadius: "10px",
 }));
 
-const HeaderDetails = styled(Box)(({ type }) => ({
-  width: type === "education" ? "84%" : "92%",
+const HeaderDetails = styled(Grid)(({ type }) => ({
+  // width: type === "education" ? "84%" : "92%",
   display: "flex",
   alignItems: "flex-start",
   justifyContent: "flex-start",
@@ -161,12 +161,12 @@ const TimeLineBox = ({ data, alignTimeLine, outlined, type }) => {
                 viewport={{ once: true, amount: 0.2 }}
                 custom={index}
               >
-                <TimelineBox>
-                  <TimelineBoxHeader>
-                    <HeaderIcon type={type}>
+                <TimelineBox container>
+                  <TimelineBoxHeader size={12} container>
+                    <HeaderIcon type={type} size={{xs:2, sm:type === "education" ? 2 : 1}}>
                       <Image src={item.img}></Image>
                     </HeaderIcon>
-                    <HeaderDetails type={type}>
+                    <HeaderDetails size={{xs:9, sm:type === "education" ? 9 : 10}} type={type}>
                       <HeadingText bold={"true"}>
                         {type === "education" ? item.school : item.company}
                       </HeadingText>
@@ -176,15 +176,17 @@ const TimeLineBox = ({ data, alignTimeLine, outlined, type }) => {
                       <Span>{item.date}</Span>
                     </HeaderDetails>
                   </TimelineBoxHeader>
-                  <TimelineBoxBody>
+                  <TimelineBoxBody size={12}>
                     <ParaText sx={{ mb: 1 }}>{item.desc}</ParaText>
                     <SkillsStack container>
-                      <SkillsStackInner size={type === "education" ? 2 : 1}>
+                      {/* <SkillsStackInner size={type === "education" ? 2 : 1}> */}
+                      <SkillsStackInner size={{xs:2, sm:type === "education" ? 2 : 1}}>
                         <ParaText sx={{ fontWeight: 600 }}>
                           {item.skills ? "Skills:" : "Grade:"}
                         </ParaText>
                       </SkillsStackInner>
-                      <SkillsStackInner size={type === "education" ? 9 : 10}>
+                      {/* <SkillsStackInner size={type === "education" ? 9 : 10}> */}
+                      <SkillsStackInner size={{xs:9, sm:type === "education" ? 9 : 10}}>
                         {item.skills ? (
                           item.skills.map((skill, index) => (
                             <SkillText key={index}>

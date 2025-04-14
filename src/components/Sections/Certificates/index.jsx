@@ -7,10 +7,10 @@ import ProjectCard from "../../MircoElements/ProjectCard";
 import Masonry from "@mui/lab/Masonry";
 
 const ProjectWrapper = styled(Grid)(({ theme }) => ({
-  width: "100%",
   display: "flex",
-  justifyContent: "flex-start",
-  alignItems: "flex-start",
+  flexGrow: 1,
+  justifyContent: "center",
+  alignItems: "center",
   flexWrap: "wrap",
   gap: "20px",
   marginTop: "32px",
@@ -33,15 +33,17 @@ const Certificates = () => {
           },
         }}
       >
-        <Masonry columns={3} spacing={2}>
-          {/* <ProjectWrapper container> */}
+        {/* <Masonry columns={3} spacing={2}> */}
+        <ProjectWrapper container>
           {projects && projects.length > 0
             ? projects.map((item) => (
-                <ProjectCard key={item.id} data={item}></ProjectCard>
+                <Grid size={{ xs: 12, sm: 5.5, md: 3.5 }} key={item.id}>
+                  <ProjectCard data={item}></ProjectCard>
+                </Grid>
               ))
             : "no certificates"}
-          {/* </ProjectWrapper> */}
-        </Masonry>
+        </ProjectWrapper>
+        {/* </Masonry> */}
       </Box>
     </Container>
   );
