@@ -6,6 +6,7 @@ import Section from "../../Helper/Section";
 import { sectionData } from "../../../data/constants";
 import { HeadingText } from "../../Helper/Typo";
 import SendIcon from "@mui/icons-material/Send";
+import { motion } from "framer-motion";
 
 const FormBox = styled(Box)(({ theme }) => ({
   width: "450px",
@@ -35,6 +36,8 @@ const Image = styled("img")(({}) => ({
   height: "200px",
 }));
 
+const MotionFormBox = motion.create(FormBox);
+const MotionImage = motion.create(Image);
 const Contact = () => {
   return (
     <Container
@@ -54,10 +57,24 @@ const Contact = () => {
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
       >
         <Grid size={6}>
-          <Image src="src\assets\mailbox.svg"></Image>
+          <MotionImage
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+            src="src\assets\mailbox.svg"
+          ></MotionImage>
         </Grid>
         <Grid size={6}>
-          <FormBox component="form" noValidate autoComplete="off">
+          <MotionFormBox
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+            component="form"
+            noValidate
+            autoComplete="off"
+          >
             <HeadingText>Connect With Me!</HeadingText>
             <TextField
               size="small"
@@ -94,7 +111,7 @@ const Contact = () => {
               variant="outlined"
             />
             <Btn title={"Send"} icon={<SendIcon />}></Btn>
-          </FormBox>
+          </MotionFormBox>
         </Grid>
       </Grid>
     </Container>

@@ -11,6 +11,7 @@ import Profile from "../../../assets/image/NiteshDubey.png";
 import FloatingCard from "../../MircoElements/FloatingCard";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
+import { FloatingCardData } from "../../../data/uiConstants";
 
 import {
   SpanHero,
@@ -135,7 +136,7 @@ const Hero = () => {
         <MotionHeroBoxDetails
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           size={{ xs: 12, sm: 6 }}
         >
           <MainHeading>
@@ -163,7 +164,7 @@ const Hero = () => {
           <MotionMiniBox
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <Avatar
               alt="Profile"
@@ -171,15 +172,15 @@ const Hero = () => {
               sx={{ width: 300, height: 300 }}
             />
           </MotionMiniBox>
-          {Bio.social.map((item, index) => (
+          {FloatingCardData.map((item, index) => (
             <FloatingCard
               key={index}
               tag={item.userId}
               link={item.link}
-              icon={item.card.icon}
-              top={item.card.top}
-              right={item.card.right}
-              bottom={item.card.bottom}
+              icon={item.cardPos.icon}
+              top={item.cardPos.top}
+              right={item.cardPos.right}
+              bottom={item.cardPos.bottom}
             ></FloatingCard>
           ))}
         </HeroBoxImg>

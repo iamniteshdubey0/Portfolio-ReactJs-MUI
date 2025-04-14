@@ -2,11 +2,10 @@ import React from "react";
 import { Button, styled } from "@mui/material";
 import { useTheme } from "@mui/material";
 import { tokens } from "../../utils/ThemesV2";
+import { motion } from "framer-motion";
 
-
-const Btn = ({ title, gradient, onclick, icon, size }) => {
+const Btn = ({ title, onclick, icon, size }) => {
   const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
 
   const CustomButton = styled(Button)(({ theme }) => ({
     padding: "10px 15px",
@@ -21,15 +20,18 @@ const Btn = ({ title, gradient, onclick, icon, size }) => {
       textDecoration: "none",
     },
   }));
+
+  const MotionCustomButton = motion.create(CustomButton);
   return (
-    <CustomButton
+    <MotionCustomButton
+      whileTap={{ scale: 0.85 }}
       size={size}
       onClick={onclick}
       variant="outlined"
       endIcon={icon}
     >
       {title}
-    </CustomButton>
+    </MotionCustomButton>
   );
 };
 

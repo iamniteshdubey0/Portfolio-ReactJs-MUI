@@ -19,8 +19,8 @@ const fadeScaleVariant = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.8,
-      delay: i * 0.2, // stagger each item
+      duration: 0.5,
+      delay: i * 0.1, // stagger each item
       ease: "easeOut",
     },
   }),

@@ -10,7 +10,7 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.4, // delay between cards
+      staggerChildren: 0.2, // delay between cards
     },
   },
 };
