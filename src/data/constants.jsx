@@ -301,7 +301,7 @@ export const projects = [
     tags: ["React JS", "TailwindCss"],
     category: "Frontend",
     github: "https://github.com/iamniteshdubey0/ECommerce-DashBoard-ReactJS",
-    webapp: "preppro.netlify.app",
+    webapp: "https://preppro.netlify.app",
   },
   {
     id: 6,
