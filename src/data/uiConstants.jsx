@@ -3,10 +3,10 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 export const Navlinks = [
-  {
-    label: "experience",
-    link: "#experience",
-  },
+  // {
+  //   label: "experience",
+  //   link: "#experience",
+  // },
   {
     label: "education",
     link: "#education",
@@ -18,6 +18,14 @@ export const Navlinks = [
   {
     label: "skills",
     link: "#skills",
+  },
+  {
+    label: "certificates",
+    link: "#certificates",
+  },
+  {
+    label: "contact",
+    link: "#contact",
   },
 ];
 

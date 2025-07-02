@@ -131,7 +131,7 @@ const Hero = () => {
   const MotionMiniBox = motion(MiniBox);
 
   return (
-    <Container maxWidth="md" sx={{ maxHeight: "80vh", overflow: "hidden", p:4 }}>
+    <Container id="hero" maxWidth="md" sx={{ maxHeight: "80vh", overflow: "hidden", p:4 }}>
       <HeroBox container sx={{ overflow: "hidden" }}>
         <MotionHeroBoxDetails
           initial={{ opacity: 0, x: -50 }}

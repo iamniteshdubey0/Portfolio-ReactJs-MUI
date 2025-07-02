@@ -84,7 +84,7 @@ const Navbar = () => {
       <NavContainer container spacing={2} maxWidth={{xs:'lg', sm:'lg'}}>
         <NavLogo container size={{ xs: 4, sm: 3 }}>
           <NavIcon size={2}>⭐</NavIcon>
-          <NavLink>
+          <NavLink href="#">
             <NavText variant="h4">portfolio</NavText>
           </NavLink>
         </NavLogo>

@@ -37,7 +37,7 @@ export const Bio = {
   name: "Nitesh Dubey",
   roles: ["Frontend Developer", "UI/UX Designer", "Programmer"],
   description:
-    "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
+    "I'm a frontend developer skilled in ReactJS and TailwindCSS, focused on creating clean, responsive web apps. I'm passionate about building useful projects, continuously learning, and improving every day.",
   resume:
     "https://drive.google.com/file/d/19dbFR-iBBtU-Zwjv0OXBxfZh27NQeeqV/view?usp=drive_link",
   download:
