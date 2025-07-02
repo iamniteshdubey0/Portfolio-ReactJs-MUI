@@ -289,7 +289,7 @@ export const projects = [
     tags: ["React JS", "TailwindCss"],
     category: "Frontend",
     github: "https://github.com/iamniteshdubey0/ECommerce-DashBoard-ReactJS",
-    webapp: "https://wowshop-responsive.netlify.app",
+    webapp: "https://portfolio-nitesh-dubey.netlify.app",
   },
   {
     id: 7,
@@ -301,7 +301,7 @@ export const projects = [
     tags: ["React JS", "TailwindCss"],
     category: "Frontend",
     github: "https://github.com/iamniteshdubey0/ECommerce-DashBoard-ReactJS",
-    webapp: "https://wowshop-responsive.netlify.app",
+    webapp: "preppro.netlify.app",
   },
   {
     id: 6,
@@ -313,7 +313,7 @@ export const projects = [
     tags: ["React JS", "Material UI"],
     category: "Frontend",
     github: "https://github.com/iamniteshdubey0/ECommerce-DashBoard-ReactJS",
-    webapp: "https://wowshop-responsive.netlify.app",
+    webapp: "https://behero-buddy.netlify.app",
   },
   {
     id: 5,
