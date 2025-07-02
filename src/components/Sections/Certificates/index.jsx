@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import ToggleTab from "../../MircoElements/ToggleTab";
 import { Box, Grid, Container, styled } from "@mui/material";
-import { projects, sectionData } from "../../../data/constants";
+import { certificates, sectionData } from "../../../data/constants";
 import Section from "../../Helper/Section";
-import ProjectCard from "../../MircoElements/ProjectCard";
-import Masonry from "@mui/lab/Masonry";
+import CertificatesCard from "../../MircoElements/CertificatesCard";
 
 const ProjectWrapper = styled(Grid)(({ theme }) => ({
   display: "flex",
@@ -35,10 +32,10 @@ const Certificates = () => {
       >
         {/* <Masonry columns={3} spacing={2}> */}
         <ProjectWrapper container>
-          {projects && projects.length > 0
-            ? projects.map((item) => (
+          {certificates && certificates.length > 0
+            ? certificates.map((item) => (
                 <Grid size={{ xs: 12, sm: 5.5, md: 3.5 }} key={item.id}>
-                  <ProjectCard data={item}></ProjectCard>
+                  <CertificatesCard data={item}></CertificatesCard>
                 </Grid>
               ))
             : "no certificates"}

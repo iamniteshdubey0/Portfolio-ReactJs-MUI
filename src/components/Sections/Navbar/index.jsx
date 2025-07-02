@@ -6,6 +6,7 @@ import Btn from "../../MircoElements/Btn";
 import DownloadIcon from "@mui/icons-material/Download";
 import { NavText } from "../../Helper/Typo";
 import { Navlinks } from "../../../data/uiConstants";
+import { Bio } from "../../../data/constants";
 
 const Nav = styled(Box)(({ theme }) => ({
   backgroundColor:
@@ -80,7 +81,7 @@ const NavLink = styled("a")(({ theme }) => ({
 const Navbar = () => {
   return (
     <Nav>
-      <NavContainer container spacing={2} maxWidth={{xs:'lg', sm:'md'}}>
+      <NavContainer container spacing={2} maxWidth={{xs:'lg', sm:'lg'}}>
         <NavLogo container size={{ xs: 4, sm: 3 }}>
           <NavIcon size={2}>⭐</NavIcon>
           <NavLink>
@@ -96,7 +97,7 @@ const Navbar = () => {
         </NavItem>
         <NavItem size={{xs:6, sm:3}}>
           <ToggleBtn></ToggleBtn>
-          <Btn title={"download cv"} size={'small'} icon={<DownloadIcon />}></Btn>
+          <Btn title={"download cv"} href={Bio.download} icon={<DownloadIcon />}></Btn>
         </NavItem>
       </NavContainer>
     </Nav>

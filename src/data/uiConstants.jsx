@@ -36,7 +36,7 @@ export const FooterSocial = [
   },
   {
     platform: "Instagram",
-    link: "https://www.linkedin.com/in/niteshdubey0",
+    link: "https://www.instagram.com/i_am_nitesh_01",
     userId: "@i_am_nitesh_01",
     icon: <InstagramIcon />,
   },
@@ -120,7 +120,7 @@ export const FloatingCardData = [
   },
   {
     platform: "Instagram",
-    link: "https://www.linkedin.com/in/niteshdubey0",
+    link: "https://www.instagram.com/i_am_nitesh_01",
     userId: "@i_am_nitesh_01",
     cardPos: {
       top: "16%",

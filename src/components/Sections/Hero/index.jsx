@@ -157,7 +157,7 @@ const Hero = () => {
             </SpanHero>
           </SubHeading>
           <Description>{Bio.description}</Description>
-          <Btn size="large" title={"Explore CV"} icon={<ArticleIcon />}></Btn>
+          <Btn href={Bio.resume} title={"View CV"} icon={<ArticleIcon />}></Btn>
         </MotionHeroBoxDetails>
 
         <HeroBoxImg size={{ xs: 12, sm: 6 }}>

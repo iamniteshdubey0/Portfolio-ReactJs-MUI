@@ -1,3 +1,11 @@
+import b1 from "../assets/image/projects/b1.png";
+import d1 from "../assets/image/projects/d1.png";
+import h2 from "../assets/image/projects/h2.png";
+import m1 from "../assets/image/projects/m1.png";
+import p4 from "../assets/image/projects/p4.png";
+import pf2 from "../assets/image/projects/pf-2.png";
+import r3 from "../assets/image/projects/r3.png";
+
 export const sectionData = [
   {
     section: "skills",
@@ -32,6 +40,8 @@ export const Bio = {
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
   resume:
     "https://drive.google.com/file/d/19dbFR-iBBtU-Zwjv0OXBxfZh27NQeeqV/view?usp=drive_link",
+  download:
+    "https://drive.usercontent.google.com/u/0/uc?id=19dbFR-iBBtU-Zwjv0OXBxfZh27NQeeqV&export=download",
 };
 
 export const skills = [
@@ -242,7 +252,7 @@ export const experiences = [
 export const education = [
   {
     id: 0,
-    img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/Kiit.jpeg?alt=media&token=3839d520-c59d-4341-ad8f-0980c98de4dd",
+    img: "https://rjcollegemainwebsitedata.s3.ap-south-1.amazonaws.com/wp-content/uploads/2024/07/College-Logo-2023-pink-294x300.png",
     school: "Ramniranjan Jhunjhunwala College, Ghatkopar (West)",
     date: "August 2019 – June 2022",
     grade: "CGPA: 9.29 / 10",
@@ -251,7 +261,7 @@ export const education = [
   },
   {
     id: 1,
-    img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/methodist.png?alt=media&token=018a1b18-e2dd-4f34-8855-cff1b6b69fd3",
+    img: "https://www.dnyanasadhanacollege.org/images/logo/logo-final.png",
     school: "Satish Pradhan Dnyanasadhana College, Thane",
     date: "June 2017 – April 2019",
     grade: "Percentage: 61.54%",
@@ -260,7 +270,7 @@ export const education = [
   },
   {
     id: 2,
-    img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/methodist.png?alt=media&token=018a1b18-e2dd-4f34-8855-cff1b6b69fd3",
+    img: "https://www.schoolsuniverse.com/_next/image?url=https%3A%2F%2Fcdn.schoolsuniverse.com%2Fmedia%2Fuploads%2F2025-01-09%252007%253A07%253A38.501269Capture.PNG&w=256&q=80",
     school: "SMT. S.B.J. English High School, Thane",
     date: "March 2017",
     grade: "Percentage: 79.20%",
@@ -271,64 +281,175 @@ export const education = [
 
 export const projects = [
   {
-    id: 9,
-    title: "WowShop-Ecommerce Dashboard Frontend Design",
-    date: "Jun 2023 - Sep 2023",
-    description:
-      "Trackify is a web application designed to streamline task management and enhance productivity in the workplace. It provides a user-friendly interface for employers to keep track of their employees' daily work activities and empowers employees to log their tasks efficiently. \nAdmin Credentials: # Email: testadmin@gmail.com #Password- 123@testadmin, Employee Credentials:	#Email: testemployee@gmail.com	#Password- 123@Testemployee",
-    image:
-      "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
-    tags: [
-      "React JS",
-      "Material UI",
-    ],
-    category: "ReactJs",
-    github: "https://https://github.com/iamniteshdubey0/ECommerce-DashBoard-ReactJS",
+    id: 8,
+    title: "Porfolio",
+    date: "Jun 2025 - Jun 2025",
+    description: "Personal portfoilio Mordern UI",
+    image: pf2,
+    tags: ["React JS", "TailwindCss"],
+    category: "Frontend",
+    github: "https://github.com/iamniteshdubey0/ECommerce-DashBoard-ReactJS",
     webapp: "https://wowshop-responsive.netlify.app",
   },
   {
-    id: 0,
-    title: "Rock Paper Scissor",
-    date: "Apr 2023 - May 2023",
+    id: 7,
+    title: "Prep-pro",
+    date: "Jun 2025 - Jun 2025",
     description:
-      "Developed a full-stack web application that allows users to search for, play, and pause their favorite podcasts on demand and create podcasts. Implemented user authentication using Google Auth and Jwt Auth, made responsive user interface with React JS that provides users with a seamless experience across all devices. Practiced agile methodologies to optimize team efficiency and communication.",
-    image:
-      "https://user-images.githubusercontent.com/64485885/234602896-a1bd8bcc-b72b-4821-83d6-8ad885bf435e.png",
-    tags: ["JavaScript", "HTML5", "CSS3"],
-    category: "Core",
-    github: "https://https://github.com/iamniteshdubey0/rock-paper-scissor-game",
-    webapp: "https://https://rockpaperscissor-jvs.netlify.app/",
+      "AI-based interview preparation platform for students and professionals.",
+    image: p4,
+    tags: ["React JS", "TailwindCss"],
+    category: "Frontend",
+    github: "https://github.com/iamniteshdubey0/ECommerce-DashBoard-ReactJS",
+    webapp: "https://wowshop-responsive.netlify.app",
   },
   {
-    id: 1,
-    title: "Expense Tracker",
-    date: "Aug 2023 - Sep-2023",
+    id: 6,
+    title: "Behero",
+    date: "Apr 2025 - Jun 2025",
     description:
-      "Designed and developed the Vexa project, a project management app that helps users and teams stay organized and on track. Implemented key features such as task tracking, team collaboration, and time tracking to improve productivity and project outcomes and also invite team/project members. The plan is to add a community of users where they can find developers and other team members and chat system implementation.",
-    image:
-      "https://user-images.githubusercontent.com/64485885/234916413-96296f13-fe4b-4cc4-b215-e72bd7c27928.png",
-    tags: [
-      "React Js",
-      "Material UI",
-      "Material UI Charts",
-    ],
-    category: "ReactJs",
-    github: "https://https://github.com/iamniteshdubey0/ExpenseTracker",
-    webapp: "https://https://expense-tracker-addvance.netlify.app/",
+      "AI-powered personalized story generator for kids using their photo and preferences.",
+    image: b1,
+    tags: ["React JS", "Material UI"],
+    category: "Frontend",
+    github: "https://github.com/iamniteshdubey0/ECommerce-DashBoard-ReactJS",
+    webapp: "https://wowshop-responsive.netlify.app",
+  },
+  {
+    id: 5,
+    title: "Ecommerce Dashboard Frontend Design",
+    date: "Jan 2025 - Mar 2025",
+    description:
+      "Clean and modern admin dashboard UI for managing ecommerce platforms.",
+    image: d1,
+    tags: ["React JS", "Material UI"],
+    category: "Frontend",
+    github: "https://github.com/iamniteshdubey0/ECommerce-DashBoard-ReactJS",
+    webapp: "https://wowshop-responsive.netlify.app",
+  },
+  {
+    id: 4,
+    title: "handCricket",
+    date: "Sep 2024 - Sep 2024",
+    description:
+      "Classic Hand Cricket game with interactive UI using vanilla JS.",
+    image: h2,
+    tags: ["JavaScript", "HTML5", "CSS3"],
+    category: "Core",
+    github: "https://github.com/iamniteshdubey0/HandCricket",
+    webapp: "https://handd-cricket.netlify.app/",
+  },
+  {
+    id: 3,
+    title: "Rock Paper Scissor",
+    date: "Sep 2024 - Sep 2024",
+    description:
+      "Classic Rock Paper Scissors game with interactive UI using vanilla JS.",
+    image: r3,
+    tags: ["JavaScript", "HTML5", "CSS3"],
+    category: "Core",
+    github: "https://github.com/iamniteshdubey0/rock-paper-scissor-game",
+    webapp: "https://rockpaperscissor-jvs.netlify.app/",
   },
   {
     id: 2,
-    title: "BrainShamer- Memory Game",
-    date: "April 2023 - May 2023",
+    title: "Expense Tracker",
+    date: "Sep 2024 - Sep 2024",
     description:
-      "Preprocessed and augmented the dataset to improve model accuracy, trained the model, created API using model and Python, and used React web app for the project's front end. Achievements: Achieved an accuracy of 99.2% to accurately detect brain tumors from medical images.",
+      "Track your daily expenses visually with charts and categories using React.",
     image:
-      "https://github.com/rishavchanda/Brain-Tumor-Detection/raw/main/Readme_resource/Image2.png",
-      tags: ["JavaScript", "HTML5", "CSS3"],
-    category: "Core",
-    github: "https://https://github.com/iamniteshdubey0/memoryGame",
+      "https://user-images.githubusercontent.com/64485885/234916413-96296f13-fe4b-4cc4-b215-e72bd7c27928.png",
+    tags: ["React Js", "Material UI", "Material UI Charts"],
+    category: "Full stack",
+    github: "https://github.com/iamniteshdubey0/ExpenseTracker",
+    webapp: "https://expense-tracker-addvance.netlify.app/",
+  },
+  {
+    id: 1,
+    title: "BrainShamer- Memory Game",
+    date: "Sep 2024 - Sep 2024",
+    description:
+      "Fun memory game to boost brain power with an engaging and responsive UI.",
+    image: m1,
+    tags: ["JavaScript", "HTML5", "CSS3"],
+    category: "Full stack",
+    github: "https://github.com/iamniteshdubey0/memoryGame",
     webapp: "https://brainsmasherr.netlify.app",
   },
-  
 ];
 
+
+export const certificates = [
+  {
+    id: 8,
+    title: "Learn Tailwind CSS 3 - A utility-first CSS framework",
+    date: "May 27th, 2025",
+    description:
+      "Fun memory game to boost brain power with an engaging and responsive UI.",
+    image: "",
+    link: "https://codedamn.com/certificate/verify/a4cffd39486bb3b2ee27183eaf662f6f53ae0533",
+  },
+   {
+    id: 7,
+    title: "React Query - The standard way to make network requests in React",
+    date: "May 27th, 2025",
+    description:
+      "Fun memory game to boost brain power with an engaging and responsive UI.",
+    image: "",
+    link: "https://codedamn.com/certificate/verify/bc816746ab34784fae6c66dda90d24f7a4d3164d",
+  },
+   {
+    id: 6,
+    title: "Learn useSWR: React hooks for data fetching",
+    date: "November 27th, 2024",
+    description:
+      "Fun memory game to boost brain power with an engaging and responsive UI.",
+    image: "https://wsrv.nl/?url=https%3A%2F%2Fs3.amazonaws.com%2Fuser-assets.codedamn.com%2F659ff7a1c4f4b8000d5cbc44%2Fcertificates%2Fe3539010df813d34bea54eb03c59ccce60528ef2.jpeg&w=1920&q=82&output=webp",
+    link: "https://codedamn.com/certificate/verify/e3539010df813d34bea54eb03c59ccce60528ef2",
+  },
+  {
+    id: 5,
+    title: "Ultimate React.js Design Patterns",
+    date: "September 20th, 2024",
+    description:
+      "Fun memory game to boost brain power with an engaging and responsive UI.",
+    image: "https://wsrv.nl/?url=https%3A%2F%2Fs3.amazonaws.com%2Fuser-assets.codedamn.com%2F659ff7a1c4f4b8000d5cbc44%2Fcertificates%2Fc21c02e024cfad837762af8d8c5cd27aaf4168a2.jpeg&w=1920&q=82&output=webp",
+    link: "https://codedamn.com/certificate/verify/c21c02e024cfad837762af8d8c5cd27aaf4168a2",
+  },
+  {
+    id: 4,
+    title: "Advanced React Hooks Course",
+    date: "May 7th, 2024",
+    description:
+      "Fun memory game to boost brain power with an engaging and responsive UI.",
+    image: "https://wsrv.nl/?url=https%3A%2F%2Fs3.amazonaws.com%2Fuser-assets.codedamn.com%2F659ff7a1c4f4b8000d5cbc44%2Fcertificates%2Ffb0910166993da617f208fb365146b04158923f9.jpeg&w=1920&q=82&output=webp",
+    link: "https://codedamn.com/certificate/verify/fb0910166993da617f208fb365146b04158923f9",
+  },
+   {
+    id: 3,
+    title: "Learn React 18",
+    date: "March 17th, 2024",
+    description:
+      "Fun memory game to boost brain power with an engaging and responsive UI.",
+    image: "https://wsrv.nl/?url=https%3A%2F%2Fs3.amazonaws.com%2Fuser-assets.codedamn.com%2F659ff7a1c4f4b8000d5cbc44%2Fcertificates%2F9fc3172cc3856bf954bb08073590df0fef7dfdd7.jpeg&w=1920&q=82&output=webp",
+    link: "https://codedamn.com/certificate/verify/9fc3172cc3856bf954bb08073590df0fef7dfdd7",
+  },
+   {
+    id: 2,
+    title: "Git Masterclass",
+    date: "February 25th, 2024",
+    description:
+      "Fun memory game to boost brain power with an engaging and responsive UI.",
+    image: "https://wsrv.nl/?url=https%3A%2F%2Fs3.amazonaws.com%2Fuser-assets.codedamn.com%2F659ff7a1c4f4b8000d5cbc44%2Fcertificates%2F546ce823dcb59aa484aa79960b4b7a0c2cdb4d0c.jpeg&w=1920&q=82&output=webp",
+    link: "https://codedamn.com/certificate/verify/546ce823dcb59aa484aa79960b4b7a0c2cdb4d0c",
+  },
+  {
+    id: 1,
+    title: "Advanced Practical JavaScript",
+    date: "February 7th, 2024",
+    description:
+      "Fun memory game to boost brain power with an engaging and responsive UI.",
+    image: "https://wsrv.nl/?url=https%3A%2F%2Fs3.amazonaws.com%2Fuser-assets.codedamn.com%2F659ff7a1c4f4b8000d5cbc44%2Fcertificates%2F89d09ec3265164a0da88007c15bda99b5d8e089a.jpeg&w=1920&q=82&output=webp",
+    link: "https://codedamn.com/certificate/verify/89d09ec3265164a0da88007c15bda99b5d8e089a",
+  },
+];

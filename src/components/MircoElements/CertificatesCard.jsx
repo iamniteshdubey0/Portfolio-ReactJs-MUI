@@ -1,16 +1,14 @@
-import React from "react";
 import { tokens } from "../../utils/ThemesV2";
 import { Box, Grid, styled, Chip } from "@mui/material";
 import { CardHeading, CardSpan, CardDescription } from "../Helper/Typo";
 import { motion } from "framer-motion";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import WebIcon from "@mui/icons-material/Web";
+import LinkIcon from "@mui/icons-material/Link";
 
 const ProCard = styled(Grid)(({ theme }) => ({
   cursor: "pointer",
   width: "100%",
   // maxWidth: "250px",
-  minHeight: "360px",
+  minHeight: "280px",
   display: "flex",
   justifyContent: "flex-start",
   alignItems: "flex-start",
@@ -33,16 +31,6 @@ const CardImage = styled("img")(({ theme }) => ({
   borderRadius: "8px",
 }));
 
-const TechStack = styled(Grid)(({ theme }) => ({
-  marginTop: "5px",
-  width: "100%",
-  display: "flex",
-  justifyContent: "flex-start",
-  alignItems: "flex-start",
-  flexWrap: "wrap",
-  gap: "5px",
-}));
-
 const CardDetails = styled(Box)(({ theme }) => ({
   display: "flex",
   flexWrap: "wrap",
@@ -50,12 +38,6 @@ const CardDetails = styled(Box)(({ theme }) => ({
   justifyContent: "flex-start",
   alignItems: "flex-start",
   gap: "0px",
-}));
-
-const TechChip = styled(Chip)(({ theme }) => ({
-  borderRadius: "4px",
-  border: `0.1px solid ${tokens(theme.palette.mode).secondary[500]}`,
-  padding: "2px 4px",
 }));
 
 const CardLinks = styled(Box)(({ theme }) => ({
@@ -76,20 +58,10 @@ const CardLink = styled("a")(({ theme }) => ({
 
 const MotionProCard = motion.create(ProCard);
 
-const ProjectCard = ({ data }) => {
+const CertificatesCard = ({ data }) => {
   return (
     <MotionProCard size={4} whileHover={{ scale: 1.05 }}>
       <CardImage src={data.image}></CardImage>
-      <TechStack>
-        {data.tags.map((tag, index) => (
-          <TechChip
-            key={index}
-            size="small"
-            label={tag}
-            variant="outlined"
-          ></TechChip>
-        ))}
-      </TechStack>
       <CardDetails>
         <CardHeading>{data.title}</CardHeading>
         <CardDescription>
@@ -97,11 +69,8 @@ const ProjectCard = ({ data }) => {
         </CardDescription>
         <CardSpan>{data.date}</CardSpan>
         <CardLinks>
-          <CardLink href={data.github} target="_blank">
-            <GitHubIcon sx={{ fontSize: "24px" }}></GitHubIcon>
-          </CardLink>
-          <CardLink href={data.webapp} target="_blank">
-            <WebIcon sx={{ fontSize: "24px" }}></WebIcon>
+          <CardLink href={data.link} target="_blank">
+            <LinkIcon sx={{ fontSize: "24px" }}></LinkIcon>
           </CardLink>
         </CardLinks>
       </CardDetails>
@@ -109,4 +78,4 @@ const ProjectCard = ({ data }) => {
   );
 };
 
-export default ProjectCard;
+export default CertificatesCard;
